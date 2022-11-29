@@ -4,7 +4,24 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1912464a-0df9-404e-9615-7ad31d96e1a2" name="Changes" comment="Creating UserEntity, UserDTO, UserRepository,">
+    <list default="true" id="1912464a-0df9-404e-9615-7ad31d96e1a2" name="Changes" comment="Mostly finishing User-related classes and interfaces, refactoring previous methods">
+      <change afterPath="$PROJECT_DIR$/ticket-service/src/main/java/com/epam/training/ticketservice/core/configuration/InMemoryDatabaseInitializer.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ticket-service/src/main/java/com/epam/training/ticketservice/core/entity/UserEntity.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ticket-service/src/main/java/com/epam/training/ticketservice/core/model/UserDTO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ticket-service/src/main/java/com/epam/training/ticketservice/core/repository/UserRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ticket-service/src/main/java/com/epam/training/ticketservice/core/services/service/UserService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ticket-service/src/main/java/com/epam/training/ticketservice/core/services/serviceimpl/UserServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ticket-service/src/main/java/com/epam/training/ticketservice/core/state/State.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ticket-service/src/main/java/com/epam/training/ticketservice/ui/command/UserCommand.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ticket-service/target/classes/com/epam/training/ticketservice/core/configuration/InMemoryDatabaseInitializer.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ticket-service/target/classes/com/epam/training/ticketservice/core/entity/UserEntity$Role.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ticket-service/target/classes/com/epam/training/ticketservice/core/entity/UserEntity.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ticket-service/target/classes/com/epam/training/ticketservice/core/model/UserDTO.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ticket-service/target/classes/com/epam/training/ticketservice/core/repository/UserRepository.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ticket-service/target/classes/com/epam/training/ticketservice/core/services/service/UserService.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ticket-service/target/classes/com/epam/training/ticketservice/core/services/serviceimpl/UserServiceImpl.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ticket-service/target/classes/com/epam/training/ticketservice/core/state/State.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ticket-service/target/classes/com/epam/training/ticketservice/ui/command/UserCommand.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/spring-shell.log" beforeDir="false" afterPath="$PROJECT_DIR$/spring-shell.log" afterDir="false" />
     </list>
@@ -18,6 +35,7 @@
       <list>
         <option value="Interface" />
         <option value="Class" />
+        <option value="Enum" />
       </list>
     </option>
   </component>
@@ -50,6 +68,9 @@
       </MavenGeneralSettings>
     </option>
   </component>
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="CurrentFile" />
+  </component>
   <component name="ProjectId" id="2IDkgrKwXAVySiFXs2DeMH5GGXu" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
@@ -66,7 +87,8 @@
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "WebServerToolWindowFactoryState": "false",
     "last_opened_file_path": "C:/Users/Broxigar/Desktop/Tomi java/Java-Ticket-Service",
-    "nodejs_package_manager_path": "npm"
+    "nodejs_package_manager_path": "npm",
+    "spring.configuration.checksum": "fbeb12f27724a51b4dce1148652e39e7"
   }
 }]]></component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
@@ -78,7 +100,8 @@
       <option name="presentableId" value="Default" />
       <updated>1669723660297</updated>
       <workItem from="1669723664564" duration="2016000" />
-      <workItem from="1669725712655" duration="11533000" />
+      <workItem from="1669725712655" duration="24419000" />
+      <workItem from="1669752843893" duration="3271000" />
     </task>
     <task id="LOCAL-00001" summary="Refactoring file structure again, removing unnecessary files and directories">
       <created>1669724428438</created>
@@ -94,7 +117,14 @@
       <option name="project" value="LOCAL" />
       <updated>1669727084031</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Creating UserEntity, UserDTO, UserRepository, UserService, UserServiceImpl and UserCommand classes">
+      <created>1669739924270</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1669739924270</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -103,6 +133,9 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Refactoring file structure again, removing unnecessary files and directories" />
     <MESSAGE value="Updating pom.xml, creating PromptConfiguration class to start the application" />
-    <option name="LAST_COMMIT_MESSAGE" value="Updating pom.xml, creating PromptConfiguration class to start the application" />
+    <MESSAGE value="Creating UserEntity, UserDTO, UserRepository, UserService, UserServiceImpl and UserCommand classes" />
+    <MESSAGE value="Adding UserEntity, UserDTO, UserRepository, UserService, UserServiceImpl and UserCommand classes" />
+    <MESSAGE value="Mostly finishing User-related classes and interfaces, refactoring previous methods" />
+    <option name="LAST_COMMIT_MESSAGE" value="Mostly finishing User-related classes and interfaces, refactoring previous methods" />
   </component>
 </project>
