@@ -3,6 +3,8 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/.idea/Java-Ticket-Service.iml" filepath="$PROJECT_DIR$/.idea/Java-Ticket-Service.iml" />
+      <module fileurl="file://$PROJECT_DIR$/ticket-service/ticket-service.iml" filepath="$PROJECT_DIR$/ticket-service/ticket-service.iml" />
+      <module fileurl="file://$PROJECT_DIR$/ticket-service-acceptance-tests/ticket-service-acceptance-tests.iml" filepath="$PROJECT_DIR$/ticket-service-acceptance-tests/ticket-service-acceptance-tests.iml" />
     </modules>
   </component>
 </project>
