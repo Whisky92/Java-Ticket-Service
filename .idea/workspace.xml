@@ -4,26 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1912464a-0df9-404e-9615-7ad31d96e1a2" name="Changes" comment="Mostly finishing User-related classes and interfaces, refactoring previous methods">
-      <change afterPath="$PROJECT_DIR$/ticket-service/src/main/java/com/epam/training/ticketservice/core/configuration/InMemoryDatabaseInitializer.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ticket-service/src/main/java/com/epam/training/ticketservice/core/entity/UserEntity.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ticket-service/src/main/java/com/epam/training/ticketservice/core/model/UserDTO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ticket-service/src/main/java/com/epam/training/ticketservice/core/repository/UserRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ticket-service/src/main/java/com/epam/training/ticketservice/core/services/service/UserService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ticket-service/src/main/java/com/epam/training/ticketservice/core/services/serviceimpl/UserServiceImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ticket-service/src/main/java/com/epam/training/ticketservice/core/state/State.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ticket-service/src/main/java/com/epam/training/ticketservice/ui/command/UserCommand.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ticket-service/target/classes/com/epam/training/ticketservice/core/configuration/InMemoryDatabaseInitializer.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ticket-service/target/classes/com/epam/training/ticketservice/core/entity/UserEntity$Role.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ticket-service/target/classes/com/epam/training/ticketservice/core/entity/UserEntity.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ticket-service/target/classes/com/epam/training/ticketservice/core/model/UserDTO.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ticket-service/target/classes/com/epam/training/ticketservice/core/repository/UserRepository.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ticket-service/target/classes/com/epam/training/ticketservice/core/services/service/UserService.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ticket-service/target/classes/com/epam/training/ticketservice/core/services/serviceimpl/UserServiceImpl.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ticket-service/target/classes/com/epam/training/ticketservice/core/state/State.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ticket-service/target/classes/com/epam/training/ticketservice/ui/command/UserCommand.class" afterDir="false" />
+    <list default="true" id="1912464a-0df9-404e-9615-7ad31d96e1a2" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/spring-shell.log" beforeDir="false" afterPath="$PROJECT_DIR$/spring-shell.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ticket-service/src/main/java/com/epam/training/ticketservice/core/entity/UserEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/ticket-service/src/main/java/com/epam/training/ticketservice/core/entity/UserEntity.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -33,9 +16,9 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Interface" />
-        <option value="Class" />
         <option value="Enum" />
+        <option value="Class" />
+        <option value="Interface" />
       </list>
     </option>
   </component>
@@ -86,7 +69,7 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "C:/Users/Broxigar/Desktop/Tomi java/Java-Ticket-Service",
+    "last_opened_file_path": "C:/Users/Broxigar/Desktop/Tomi java/epam-deik-java-dev-2022-23-semester-tuesday-group",
     "nodejs_package_manager_path": "npm",
     "spring.configuration.checksum": "fbeb12f27724a51b4dce1148652e39e7"
   }
@@ -101,7 +84,7 @@
       <updated>1669723660297</updated>
       <workItem from="1669723664564" duration="2016000" />
       <workItem from="1669725712655" duration="24419000" />
-      <workItem from="1669752843893" duration="3271000" />
+      <workItem from="1669752843893" duration="5565000" />
     </task>
     <task id="LOCAL-00001" summary="Refactoring file structure again, removing unnecessary files and directories">
       <created>1669724428438</created>
@@ -124,7 +107,14 @@
       <option name="project" value="LOCAL" />
       <updated>1669739924270</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Mostly finishing User-related classes and interfaces, refactoring previous methods">
+      <created>1669757312090</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1669757312090</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
