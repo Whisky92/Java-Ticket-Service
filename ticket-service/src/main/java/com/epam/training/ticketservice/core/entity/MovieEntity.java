@@ -1,5 +1,6 @@
 package com.epam.training.ticketservice.core.entity;
 
+import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
@@ -12,6 +13,7 @@ import javax.persistence.Table;
 @Table(name="Movies")
 @Data
 @NoArgsConstructor
+@AllArgsConstructor
 public class MovieEntity {
     @Id
     private String title;

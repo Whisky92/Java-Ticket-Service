@@ -6,7 +6,10 @@
   <component name="ChangeListManager">
     <list default="true" id="1912464a-0df9-404e-9615-7ad31d96e1a2" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ticket-service/src/main/java/com/epam/training/ticketservice/core/entity/UserEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/ticket-service/src/main/java/com/epam/training/ticketservice/core/entity/UserEntity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ticket-service/src/main/java/com/epam/training/ticketservice/core/entity/MovieEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/ticket-service/src/main/java/com/epam/training/ticketservice/core/entity/MovieEntity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ticket-service/src/main/java/com/epam/training/ticketservice/core/model/MovieDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/ticket-service/src/main/java/com/epam/training/ticketservice/core/model/MovieDTO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ticket-service/src/main/java/com/epam/training/ticketservice/core/repository/MovieRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/ticket-service/src/main/java/com/epam/training/ticketservice/core/repository/MovieRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ticket-service/src/main/java/com/epam/training/ticketservice/core/services/service/MovieService.java" beforeDir="false" afterPath="$PROJECT_DIR$/ticket-service/src/main/java/com/epam/training/ticketservice/core/services/service/MovieService.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -17,8 +20,8 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Enum" />
-        <option value="Class" />
         <option value="Interface" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -69,7 +72,7 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "C:/Users/Broxigar/Desktop/Tomi java/epam-deik-java-dev-2022-23-semester-tuesday-group",
+    "last_opened_file_path": "C:/Users/Broxigar/Desktop/Tomi java/Java-Ticket-Service",
     "nodejs_package_manager_path": "npm",
     "spring.configuration.checksum": "fbeb12f27724a51b4dce1148652e39e7"
   }
@@ -85,6 +88,7 @@
       <workItem from="1669723664564" duration="2016000" />
       <workItem from="1669725712655" duration="24419000" />
       <workItem from="1669752843893" duration="5565000" />
+      <workItem from="1669803909893" duration="4916000" />
     </task>
     <task id="LOCAL-00001" summary="Refactoring file structure again, removing unnecessary files and directories">
       <created>1669724428438</created>
@@ -114,7 +118,14 @@
       <option name="project" value="LOCAL" />
       <updated>1669757312090</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="Creating MovieEntity, MovieDTO, MovieRepository and MovieService classes">
+      <created>1669804252106</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1669804252106</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -126,6 +137,7 @@
     <MESSAGE value="Creating UserEntity, UserDTO, UserRepository, UserService, UserServiceImpl and UserCommand classes" />
     <MESSAGE value="Adding UserEntity, UserDTO, UserRepository, UserService, UserServiceImpl and UserCommand classes" />
     <MESSAGE value="Mostly finishing User-related classes and interfaces, refactoring previous methods" />
-    <option name="LAST_COMMIT_MESSAGE" value="Mostly finishing User-related classes and interfaces, refactoring previous methods" />
+    <MESSAGE value="Creating MovieEntity, MovieDTO, MovieRepository and MovieService classes" />
+    <option name="LAST_COMMIT_MESSAGE" value="Creating MovieEntity, MovieDTO, MovieRepository and MovieService classes" />
   </component>
 </project>
