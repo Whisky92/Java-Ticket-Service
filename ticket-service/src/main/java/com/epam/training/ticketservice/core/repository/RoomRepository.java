@@ -1,6 +1,7 @@
 package com.epam.training.ticketservice.core.repository;
 
 import com.epam.training.ticketservice.core.entity.MovieEntity;
+import com.epam.training.ticketservice.core.entity.RoomEntity;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Modifying;
 import org.springframework.data.jpa.repository.Query;
@@ -8,13 +9,15 @@ import org.springframework.transaction.annotation.Transactional;
 
 import java.util.Optional;
 
-public interface MovieRepository extends JpaRepository<MovieEntity, String> {
-    Optional<MovieEntity> findByTitle(String title);
+public interface RoomRepository extends JpaRepository<RoomEntity, String> {
+
+    Optional<RoomEntity> findByName(String name);
     @Transactional
     @Modifying
-    @Query("UPDATE MovieEntity me SET me.genre=:genre, me.length=:len WHERE me.title=:title")
-    int updateMovie(String title, String genre, int len);
+    @Query("UPDATE RoomEntity re SET re.rowCount=:rowCount, re.columnCount=:columnCount WHERE re.name=:name")
+    int updateRoom(String name, int rowCount, int columnCount);
+
     @Transactional
     @Modifying
-    int deleteByTitle(String title);
+    int deleteByName(String name);
 }

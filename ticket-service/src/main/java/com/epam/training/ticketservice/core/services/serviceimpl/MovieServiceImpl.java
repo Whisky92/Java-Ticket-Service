@@ -7,7 +7,9 @@ import com.epam.training.ticketservice.core.services.service.MovieService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
 import java.util.Optional;
+import java.util.stream.Collectors;
 
 @Service
 @RequiredArgsConstructor
@@ -22,6 +24,22 @@ public class MovieServiceImpl implements MovieService {
             movieRepository.save(createEntity(title, genre, length));
         }
         return movieDTO;
+    }
+    @Override
+    public int updateMovie(String title, String genre, int length){
+        return movieRepository.updateMovie(title, genre, length);
+    }
+
+    @Override
+    public int deleteMovie(String title){
+        return movieRepository.deleteByTitle(title);
+    }
+
+    @Override
+    public List<MovieDTO> getMovieList(){
+        return movieRepository.findAll().stream()
+           .map(this::convertEntityToDTO)
+                .collect(Collectors.toList());
     }
 
     private MovieEntity createEntity(String title, String genre, int length){

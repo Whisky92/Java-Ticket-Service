@@ -7,4 +7,6 @@ import lombok.Value;
 public class UserDTO {
     private final String username;
     private final UserEntity.Role role;
+
+
 }

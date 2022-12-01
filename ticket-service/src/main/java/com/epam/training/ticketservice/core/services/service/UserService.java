@@ -1,6 +1,5 @@
 package com.epam.training.ticketservice.core.services.service;
 
-import com.epam.training.ticketservice.core.entity.UserEntity;
 import com.epam.training.ticketservice.core.model.UserDTO;
 import com.epam.training.ticketservice.core.services.serviceimpl.UserServiceImpl;
 import com.epam.training.ticketservice.core.state.State;
