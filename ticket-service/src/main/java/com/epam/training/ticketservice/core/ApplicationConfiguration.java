@@ -5,8 +5,10 @@ import org.springframework.context.annotation.Configuration;
 
 @Configuration
 public class ApplicationConfiguration {
+
     @Bean
-    public DateFormatter dateFormatter(){
+    public DateFormatter dateFormatter() {
         return new DateFormatter();
     }
+
 }

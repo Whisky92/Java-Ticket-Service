@@ -11,6 +11,7 @@ import java.util.List;
 import java.util.Optional;
 
 public interface ScreeningService {
+
     String createScreening(String movieTitle, String roomName, String startTime);
 
     List<ScreeningDTO> getScreeningList();

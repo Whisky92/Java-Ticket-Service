@@ -6,7 +6,11 @@ import lombok.Value;
 @Builder(setterPrefix = "with")
 @Value
 public class RoomDTO{
+
     private final String name;
+
     private final int rowCount;
+
     private final int columnCount;
+
 }

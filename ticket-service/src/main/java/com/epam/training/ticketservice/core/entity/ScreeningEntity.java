@@ -12,7 +12,7 @@ import java.util.Date;
 
 @Entity
 @Builder(setterPrefix = "with")
-@Table(name="screenings")
+@Table(name = "screenings")
 @Data
 @NoArgsConstructor
 @AllArgsConstructor

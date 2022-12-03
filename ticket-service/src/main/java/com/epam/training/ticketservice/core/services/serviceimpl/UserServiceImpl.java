@@ -13,37 +13,40 @@ import java.util.Optional;
 @Service
 @RequiredArgsConstructor
 public class UserServiceImpl implements UserService {
+
     private final UserRepository userRepository;
+
     private UserDTO loggedInUser = null;
+
     @Override
-    public State loginAsAdmin(String username, String password){
-        if(describe().isPresent()){
+    public State loginAsAdmin(String username, String password) {
+        if(describe().isPresent()) {
             return State.LOGGED_IN;
         }
         Optional<UserDTO> user = login(username, password);
-        if(user.isEmpty()){
+        if(user.isEmpty()) {
             return State.NOT_FOUND;
         }
-        loggedInUser=user.get();
+        loggedInUser = user.get();
         return State.CORRECT;
     }
 
     @Override
-    public State logout(){
-        if(describe().isEmpty()){
+    public State logout() {
+        if(describe().isEmpty()) {
             return State.LOGGED_IN;
         }
-        loggedInUser=null;
+        loggedInUser = null;
         return State.CORRECT;
     }
 
 
 
-    private Optional<UserDTO> login(String username, String password){
+    private Optional<UserDTO> login(String username, String password) {
         Optional<UserEntity> user = userRepository.findByUsernameAndPassword(username, password);
-        if(user.isEmpty()){
+        if(user.isEmpty()) {
             return Optional.empty();
-        }else{
+        } else {
             return Optional.of(new UserDTO(user.get().getUsername(),user.get().getRole()));
         }
     }

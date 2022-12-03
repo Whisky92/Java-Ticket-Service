@@ -16,53 +16,57 @@ import java.util.Optional;
 
 @ExtendWith(MockitoExtension.class)
 public class UserServiceImplTest {
+
     @Mock
     private UserRepository userRepository;
+
     @InjectMocks
     private UserServiceImpl userService;
+
     private final UserEntity TEST_ADMIN = new UserEntity("admin", "admin", UserEntity.Role.ADMIN);
 
     @Test
-    void testLoginAsAdminShouldReturnCorrectStateWhenUsernameAndPasswordAreCorrect(){
+    void testLoginAsAdminShouldReturnCorrectStateWhenUsernameAndPasswordAreCorrect() {
         //Given
         State expected = State.CORRECT;
         Mockito.when(userRepository.findByUsernameAndPassword(TEST_ADMIN.getUsername(), TEST_ADMIN.getPassword()))
                 .thenReturn(Optional.of(TEST_ADMIN));
         //When
-        State actual = userService.loginAsAdmin(TEST_ADMIN.getUsername(),TEST_ADMIN.getPassword());
+        State actual = userService.loginAsAdmin(TEST_ADMIN.getUsername(), TEST_ADMIN.getPassword());
         //Then
         Assertions.assertEquals(expected, actual);
         Mockito.verify(userRepository).findByUsernameAndPassword(TEST_ADMIN.getUsername(), TEST_ADMIN.getPassword());
     }
 
     @Test
-    void testLoginAsAdminShouldReturnLoggedInStateWhenUserIsAlreadyLoggedIn(){
+    void testLoginAsAdminShouldReturnLoggedInStateWhenUserIsAlreadyLoggedIn() {
         //Given
         State expected = State.LOGGED_IN;
         Mockito.when(userRepository.findByUsernameAndPassword(TEST_ADMIN.getUsername(), TEST_ADMIN.getPassword()))
                 .thenReturn(Optional.of(TEST_ADMIN));
         userService.loginAsAdmin(TEST_ADMIN.getUsername(),TEST_ADMIN.getPassword());
         //When
-        State actual = userService.loginAsAdmin(TEST_ADMIN.getUsername(),TEST_ADMIN.getPassword());
-        //Then
-        Assertions.assertEquals(expected, actual);
-        Mockito.verify(userRepository).findByUsernameAndPassword(TEST_ADMIN.getUsername(), TEST_ADMIN.getPassword());
-    }
-    @Test
-    void testLoginAsAdminShouldReturnNotFoundStateWhenUsernameOrPasswordIsIncorrect(){
-        //Given
-        State expected = State.NOT_FOUND;
-        Mockito.when(userRepository.findByUsernameAndPassword(TEST_ADMIN.getUsername(), TEST_ADMIN.getPassword()))
-                .thenReturn(Optional.empty());
-        //When
-        State actual = userService.loginAsAdmin(TEST_ADMIN.getUsername(),TEST_ADMIN.getPassword());
+        State actual = userService.loginAsAdmin(TEST_ADMIN.getUsername(), TEST_ADMIN.getPassword());
         //Then
         Assertions.assertEquals(expected, actual);
         Mockito.verify(userRepository).findByUsernameAndPassword(TEST_ADMIN.getUsername(), TEST_ADMIN.getPassword());
     }
 
     @Test
-    void testLogoutShouldReturnCorrectStateWhenUserIsLoggedIn(){
+    void testLoginAsAdminShouldReturnNotFoundStateWhenUsernameOrPasswordIsIncorrect() {
+        //Given
+        State expected = State.NOT_FOUND;
+        Mockito.when(userRepository.findByUsernameAndPassword(TEST_ADMIN.getUsername(), TEST_ADMIN.getPassword()))
+                .thenReturn(Optional.empty());
+        //When
+        State actual = userService.loginAsAdmin(TEST_ADMIN.getUsername(), TEST_ADMIN.getPassword());
+        //Then
+        Assertions.assertEquals(expected, actual);
+        Mockito.verify(userRepository).findByUsernameAndPassword(TEST_ADMIN.getUsername(), TEST_ADMIN.getPassword());
+    }
+
+    @Test
+    void testLogoutShouldReturnCorrectStateWhenUserIsLoggedIn() {
         //Given
         State expected = State.CORRECT;
         Mockito.when(userRepository.findByUsernameAndPassword(TEST_ADMIN.getUsername(), TEST_ADMIN.getPassword()))
@@ -76,7 +80,7 @@ public class UserServiceImplTest {
     }
 
     @Test
-    void testLogoutShouldReturnLoggedInStateWhenUserIsNotLoggedIn(){
+    void testLogoutShouldReturnLoggedInStateWhenUserIsNotLoggedIn() {
         //Given
         State expected = State.LOGGED_IN;
         //When
@@ -88,7 +92,7 @@ public class UserServiceImplTest {
     @Test
     void testDescribeShouldReturnCurrentOptionalUserWhenSignedInPrivileged() {
         // Given
-        Optional<UserDTO> expected =Optional.of(new UserDTO(TEST_ADMIN.getUsername(),TEST_ADMIN.getRole()));
+        Optional<UserDTO> expected = Optional.of(new UserDTO(TEST_ADMIN.getUsername(), TEST_ADMIN.getRole()));
         Mockito.when(userRepository.findByUsernameAndPassword(TEST_ADMIN.getUsername(), TEST_ADMIN.getPassword()))
                 .thenReturn(Optional.of(TEST_ADMIN));
         userService.loginAsAdmin(TEST_ADMIN.getUsername(), TEST_ADMIN.getPassword());
@@ -100,7 +104,5 @@ public class UserServiceImplTest {
         Assertions.assertEquals(expected, actual);
         Mockito.verify(userRepository).findByUsernameAndPassword(TEST_ADMIN.getUsername(), TEST_ADMIN.getPassword());
     }
-
-
 
 }

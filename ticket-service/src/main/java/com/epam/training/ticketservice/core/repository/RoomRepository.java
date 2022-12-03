@@ -8,6 +8,7 @@ import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.util.Optional;
+
 @Repository
 public interface RoomRepository extends JpaRepository<RoomEntity, String> {
 

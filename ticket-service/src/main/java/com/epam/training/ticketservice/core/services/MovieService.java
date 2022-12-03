@@ -9,9 +9,11 @@ import java.util.Optional;
 public interface MovieService {
 
     Optional<MovieDTO> createMovie(String title, String genre, int length);
+
     int updateMovie(String title, String genre, int length);
 
     public MovieDTO convertEntityToDTO(MovieEntity movieEntity);
+
     int deleteMovie(String title);
 
     List<MovieDTO> getMovieList();

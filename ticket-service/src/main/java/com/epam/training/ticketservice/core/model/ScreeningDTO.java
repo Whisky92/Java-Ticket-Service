@@ -8,7 +8,11 @@ import java.util.Date;
 @Builder(setterPrefix = "with")
 @Value
 public class ScreeningDTO{
+
     private final MovieDTO movie;
+
     private final RoomDTO room;
+
     private final Date time;
+
 }

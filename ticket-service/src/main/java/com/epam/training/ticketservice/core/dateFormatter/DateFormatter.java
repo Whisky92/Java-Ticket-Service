@@ -12,7 +12,7 @@ import java.util.Optional;
 @AllArgsConstructor
 @EqualsAndHashCode
 public class DateFormatter {
-    public Optional<Date> formatDate(String date){
+    public Optional<Date> formatDate(String date) {
         SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd HH:mm");
         Date formattedDate;
         try {

@@ -7,7 +7,10 @@ import java.util.Optional;
 
 
 public interface UserService {
+
     State loginAsAdmin(String username, String password);
+
     State logout();
+
     Optional<UserDTO> describe();
 }

@@ -18,36 +18,36 @@ public class MovieServiceImpl implements MovieService {
     private final MovieRepository movieRepository;
 
     @Override
-    public Optional<MovieDTO> createMovie(String title, String genre, int length){
+    public Optional<MovieDTO> createMovie(String title, String genre, int length) {
         Optional<MovieDTO> movieDTO = convertEntityToDTO(movieRepository.findByTitle(title));
-        if(movieDTO.isEmpty()){
+        if(movieDTO.isEmpty()) {
             movieRepository.save(createEntity(title, genre, length));
         }
         return movieDTO;
     }
 
     @Override
-    public int updateMovie(String title, String genre, int length){
+    public int updateMovie(String title, String genre, int length) {
         return movieRepository.updateMovie(title, genre, length);
     }
 
     @Override
-    public int deleteMovie(String title){
+    public int deleteMovie(String title) {
         return movieRepository.deleteByTitle(title);
     }
 
     @Override
-    public List<MovieDTO> getMovieList(){
+    public List<MovieDTO> getMovieList() {
         return movieRepository.findAll().stream()
            .map(this::convertEntityToDTO)
                 .collect(Collectors.toList());
     }
 
-    private MovieEntity createEntity(String title, String genre, int length){
+    private MovieEntity createEntity(String title, String genre, int length) {
         return new MovieEntity(title,genre,length);
     }
 
-    public MovieDTO convertEntityToDTO(MovieEntity movieEntity){
+    public MovieDTO convertEntityToDTO(MovieEntity movieEntity) {
         return MovieDTO.builder()
                 .withTitle(movieEntity.getTitle())
                 .withGenre(movieEntity.getGenre())
@@ -55,7 +55,7 @@ public class MovieServiceImpl implements MovieService {
                 .build();
     }
 
-    private Optional<MovieDTO> convertEntityToDTO(Optional<MovieEntity> movieEntity){
+    private Optional<MovieDTO> convertEntityToDTO(Optional<MovieEntity> movieEntity) {
         return movieEntity.isEmpty() ? Optional.empty() : Optional.of(convertEntityToDTO(movieEntity.get()));
     }
 

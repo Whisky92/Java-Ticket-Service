@@ -24,33 +24,35 @@ public class MovieServiceImplTest {
     private final MovieEntity TEST_MOVIE = new MovieEntity("Titanic","comedy",120);
 
     @Test
-    void testCreateMovieShouldReturnOptionalEmptyWhenMovieTitleDoesNotExist(){
+    void testCreateMovieShouldReturnOptionalEmptyWhenMovieTitleDoesNotExist() {
         //Given
         Optional<MovieDTO> expected = Optional.empty();
         Mockito.when(movieRepository.findByTitle(TEST_MOVIE.getTitle()))
                 .thenReturn(Optional.empty());
         //When
-        Optional<MovieDTO> actual = movieService.createMovie(TEST_MOVIE.getTitle(),TEST_MOVIE.getGenre(),TEST_MOVIE.getLength());
+        Optional<MovieDTO> actual = movieService
+                .createMovie(TEST_MOVIE.getTitle(), TEST_MOVIE.getGenre(), TEST_MOVIE.getLength());
         //Then
         Assertions.assertEquals(expected,actual);
         Mockito.verify(movieRepository).findByTitle(TEST_MOVIE.getTitle());
     }
 
     @Test
-    void testCreateMovieShouldReturnOptionalMovieWhenMovieTitleExists(){
+    void testCreateMovieShouldReturnOptionalMovieWhenMovieTitleExists() {
         //Given
-        Optional<MovieDTO> expected = Optional.of(new MovieDTO(TEST_MOVIE.getTitle(),TEST_MOVIE.getGenre(),TEST_MOVIE.getLength()));
+        Optional<MovieDTO> expected = Optional
+                .of(new MovieDTO(TEST_MOVIE.getTitle(),TEST_MOVIE.getGenre(),TEST_MOVIE.getLength()));
         Mockito.when(movieRepository.findByTitle(TEST_MOVIE.getTitle()))
                 .thenReturn(Optional.of(TEST_MOVIE));
         //When
         Optional<MovieDTO> actual = movieService.createMovie(TEST_MOVIE.getTitle(),TEST_MOVIE.getGenre(),TEST_MOVIE.getLength());
         //Then
-        Assertions.assertEquals(expected,actual);
+        Assertions.assertEquals(expected, actual);
         Mockito.verify(movieRepository).findByTitle(TEST_MOVIE.getTitle());
     }
 
     @Test
-    void testCreateMovieShouldReturnOneWhenTheMovieWasUpdated(){
+    void testCreateMovieShouldReturnOneWhenTheMovieWasUpdated() {
         //Given
         int expected = 1;
         Mockito.when(movieRepository.updateMovie(TEST_MOVIE.getTitle(),TEST_MOVIE.getGenre(),TEST_MOVIE.getLength()))
@@ -59,32 +61,34 @@ public class MovieServiceImplTest {
         int actual = movieService.updateMovie(TEST_MOVIE.getTitle(), TEST_MOVIE.getGenre(), TEST_MOVIE.getLength());
         //Then
         Assertions.assertEquals(expected,actual);
-        Mockito.verify(movieRepository).updateMovie(TEST_MOVIE.getTitle(), TEST_MOVIE.getGenre(), TEST_MOVIE.getLength());
+        Mockito.verify(movieRepository)
+                .updateMovie(TEST_MOVIE.getTitle(), TEST_MOVIE.getGenre(), TEST_MOVIE.getLength());
     }
 
     @Test
-    void testCreateMovieShouldReturnZeroWhenTheMovieWasNotUpdated(){
+    void testCreateMovieShouldReturnZeroWhenTheMovieWasNotUpdated() {
         //Given
         int expected = 0;
-        Mockito.when(movieRepository.updateMovie(TEST_MOVIE.getTitle(),TEST_MOVIE.getGenre(),TEST_MOVIE.getLength()))
+        Mockito.when(movieRepository.updateMovie(TEST_MOVIE.getTitle(), TEST_MOVIE.getGenre(), TEST_MOVIE.getLength()))
                 .thenReturn(0);
         //When
         int actual = movieService.updateMovie(TEST_MOVIE.getTitle(), TEST_MOVIE.getGenre(), TEST_MOVIE.getLength());
         //Then
-        Assertions.assertEquals(expected,actual);
-        Mockito.verify(movieRepository).updateMovie(TEST_MOVIE.getTitle(), TEST_MOVIE.getGenre(), TEST_MOVIE.getLength());
+        Assertions.assertEquals(expected, actual);
+        Mockito.verify(movieRepository)
+                .updateMovie(TEST_MOVIE.getTitle(), TEST_MOVIE.getGenre(), TEST_MOVIE.getLength());
     }
 
     @Test
     void testDeleteMovieShouldReturnOneWhenTheMovieWasDeleted() {
         //Given
-        int expected=1;
+        int expected = 1;
         Mockito.when(movieRepository.deleteByTitle(TEST_MOVIE.getTitle()))
                 .thenReturn(1);
         //When
         int actual = movieService.deleteMovie(TEST_MOVIE.getTitle());
         //Then
-        Assertions.assertEquals(expected,actual);
+        Assertions.assertEquals(expected, actual);
         Mockito.verify(movieRepository).deleteByTitle(TEST_MOVIE.getTitle());
 
     }
@@ -92,7 +96,7 @@ public class MovieServiceImplTest {
     @Test
     void testDeleteMovieShouldReturnZeroWhenNoMovieWasDeleted() {
         //Given
-        int expected=0;
+        int expected = 0;
         Mockito.when(movieRepository.deleteByTitle(TEST_MOVIE.getTitle()))
                 .thenReturn(0);
         //When
@@ -103,19 +107,7 @@ public class MovieServiceImplTest {
 
     }
 
-    @Test
-    void testGetMovieListShouldReturnListOfMoviesWhenTheDatabaseIsNotEmpty() {
-        //Given
-        List expected=List.of(movieService.convertEntityToDTO(TEST_MOVIE));
-        Mockito.when(movieRepository.deleteByTitle(TEST_MOVIE.getTitle()))
-                .thenReturn(1);
-        //When
-        int actual = movieService.deleteMovie(TEST_MOVIE.getTitle());
-        //Then
-        Assertions.assertEquals(expected,actual);
-        Mockito.verify(movieRepository).deleteByTitle(TEST_MOVIE.getTitle());
 
-    }
 
 
 }

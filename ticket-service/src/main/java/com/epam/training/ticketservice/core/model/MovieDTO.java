@@ -4,8 +4,11 @@ import lombok.Value;
 
 @Value
 public class MovieDTO {
+
     private final String title;
+
     private final String genre;
+
     private final int length;
 
     public static Builder builder(){

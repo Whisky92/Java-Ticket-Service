@@ -9,8 +9,10 @@ import org.mockito.junit.jupiter.MockitoExtension;
 
 @ExtendWith(MockitoExtension.class)
 public class RoomServiceImplTest {
+
     @Mock
     private RoomRepository roomRepository;
+
     @InjectMocks
     private RoomServiceImpl roomService;
 

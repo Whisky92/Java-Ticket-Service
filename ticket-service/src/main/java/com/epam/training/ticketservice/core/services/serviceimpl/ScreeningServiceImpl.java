@@ -23,21 +23,26 @@ import java.util.stream.Collectors;
 @Service
 @RequiredArgsConstructor
 public class ScreeningServiceImpl implements ScreeningService {
+
     private final ScreeningRepository screeningRepository;
+
     private final MovieRepository movieRepository;
+
     private final MovieService movieService;
+
     private final RoomRepository roomRepository;
+
     private final RoomService roomService;
+
     private final DateFormatter dateFormatter;
 
     @Override
-    public String createScreening(String movieTitle, String roomName, String startTime){
-        MovieEntity movie = movieRepository.findByTitle(movieTitle).orElseThrow ( () ->new IllegalArgumentException("No such movie with this title"));
-        RoomEntity room = roomRepository.findByName(roomName).orElseThrow ( () ->new IllegalArgumentException("No such room with that name"));
-        SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd HH:mm");
+    public String createScreening(String movieTitle, String roomName, String startTime) {
+        MovieEntity movie = movieRepository.findByTitle(movieTitle).orElseThrow ( () -> new IllegalArgumentException("No such movie with this title"));
+        RoomEntity room = roomRepository.findByName(roomName).orElseThrow ( () -> new IllegalArgumentException("No such room with that name"));
         Date date = (dateFormatter.formatDate(startTime).orElseThrow(() -> new IllegalArgumentException("Invalid date")));
-        String result=isRoomAndTimeWrong(date, movie.getLength(), room.getName());
-        if(!result.equals("")){
+        String result = isRoomAndTimeWrong(date, movie.getLength(), room.getName());
+        if (!result.equals("")) {
             return result;
         }
         ScreeningEntity screeningEntity=createEntity(movie, room, date);
@@ -45,29 +50,28 @@ public class ScreeningServiceImpl implements ScreeningService {
         return "Screening successfully created";
     }
     @Override
-    public List<ScreeningDTO> getScreeningList(){
+    public List<ScreeningDTO> getScreeningList() {
         return screeningRepository.findAll().stream()
                 .map(this::convertEntityToDTO)
                 .collect(Collectors.toList());
     }
     @Override
-    public int deleteScreening(String movieTitle, String roomName, String startTime){
-        MovieEntity movie = movieRepository.findByTitle(movieTitle).orElseThrow(()->new IllegalArgumentException("No such movie with that title"));
-        RoomEntity room = roomRepository.findByName(roomName).orElseThrow(()->new IllegalArgumentException("No such room with that name"));
-        Date date = dateFormatter.formatDate(startTime).orElseThrow(()->new IllegalArgumentException("Invalid date"));
-        return screeningRepository.deleteByMovieAndRoomAndTime(movie,room,date);
+    public int deleteScreening(String movieTitle, String roomName, String startTime) {
+        MovieEntity movie = movieRepository.findByTitle(movieTitle).orElseThrow(() -> new IllegalArgumentException("No such movie with that title"));
+        RoomEntity room = roomRepository.findByName(roomName).orElseThrow(() -> new IllegalArgumentException("No such room with that name"));
+        Date date = dateFormatter.formatDate(startTime).orElseThrow(() -> new IllegalArgumentException("Invalid date"));
+        return screeningRepository.deleteByMovieAndRoomAndTime(movie, room, date);
 
     }
 
-
-    private ScreeningEntity createEntity(MovieEntity movie, RoomEntity room, Date startTime){
+    private ScreeningEntity createEntity(MovieEntity movie, RoomEntity room, Date startTime) {
         return ScreeningEntity.builder()
                 .withMovie(movie)
                 .withRoom(room)
                 .withTime(startTime)
                 .build();
     }
-    private ScreeningDTO convertEntityToDTO(ScreeningEntity screeningEntity){
+    private ScreeningDTO convertEntityToDTO(ScreeningEntity screeningEntity) {
         return ScreeningDTO.builder()
                 .withMovie(movieService.convertEntityToDTO(screeningEntity.getMovie()))
                 .withRoom(roomService.convertEntityToDTO(screeningEntity.getRoom()))
@@ -76,35 +80,37 @@ public class ScreeningServiceImpl implements ScreeningService {
     }
 
     private String isRoomAndTimeWrong(Date startTime, int length, String room) {
-        List<ScreeningEntity> screenings=screeningRepository.findAll();
+        List<ScreeningEntity> screenings = screeningRepository.findAll();
         Date endTime = getTime(startTime, length);
         for (ScreeningEntity screening : screenings) {
             Date currentStart = screening.getTime();
             int currentLength = screening.getMovie().getLength();
             Date currentEnd = getTime(currentStart, currentLength);
             String currentName = screening.getRoom().getName();
-            if (isOverLapping(startTime, getTime(startTime, length), currentStart, currentEnd) && room.equals(currentName)) {
+            if (isOverLapping(startTime, getTime(startTime, length), currentStart, currentEnd)
+                    && room.equals(currentName)) {
                 return "There is an overlapping screening";
-            } else if (isDuringMovieBreak(startTime, currentEnd, endTime) || isDuringMovieBreak(endTime,getTime(currentStart,-10) ,currentStart)) {
+            } else if (isDuringMovieBreak(startTime, currentEnd, endTime)
+                    || isDuringMovieBreak(endTime,getTime(currentStart,-10) ,currentStart)) {
                 return "This would start in the break period after another screening in this room";
             }
         }
         return "";
     }
 
-    private boolean isOverLapping(Date startOfFirst, Date endOfFirst, Date startOfSecond, Date endOfSecond){
+    private boolean isOverLapping(Date startOfFirst, Date endOfFirst, Date startOfSecond, Date endOfSecond) {
         final int PLUS = 1;
-        return (startOfFirst.compareTo(endOfSecond)!=PLUS && startOfSecond.compareTo(endOfFirst)!=PLUS);
+        return (startOfFirst.compareTo(endOfSecond) != PLUS && startOfSecond.compareTo(endOfFirst) != PLUS);
     }
 
-    private boolean isDuringMovieBreak(Date startOrEndOfMovie, Date startOfBreak, Date endOfBreak){
-        if(startOrEndOfMovie.compareTo(startOfBreak)!=-1 && startOrEndOfMovie.compareTo(endOfBreak)!=1){
+    private boolean isDuringMovieBreak(Date startOrEndOfMovie, Date startOfBreak, Date endOfBreak) {
+        if (startOrEndOfMovie.compareTo(startOfBreak) != -1 && startOrEndOfMovie.compareTo(endOfBreak) != 1){
             return true;
         }
         return false;
     }
 
-    private Date getTime(Date startTime, Integer length){
+    private Date getTime(Date startTime, Integer length) {
         Calendar calendar = Calendar.getInstance();
         calendar.setTime(startTime);
         calendar.add(calendar.MINUTE, length);
