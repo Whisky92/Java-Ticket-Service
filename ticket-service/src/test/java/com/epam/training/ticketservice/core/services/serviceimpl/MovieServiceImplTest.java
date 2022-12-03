@@ -12,6 +12,7 @@ import org.mockito.Mock;
 import org.mockito.Mockito;
 import org.mockito.junit.jupiter.MockitoExtension;
 
+import java.util.List;
 import java.util.Optional;
 
 @ExtendWith(MockitoExtension.class)
@@ -64,14 +65,57 @@ public class MovieServiceImplTest {
     @Test
     void testCreateMovieShouldReturnZeroWhenTheMovieWasNotUpdated(){
         //Given
-        int expected = 1;
+        int expected = 0;
         Mockito.when(movieRepository.updateMovie(TEST_MOVIE.getTitle(),TEST_MOVIE.getGenre(),TEST_MOVIE.getLength()))
-                .thenReturn(1);
+                .thenReturn(0);
         //When
         int actual = movieService.updateMovie(TEST_MOVIE.getTitle(), TEST_MOVIE.getGenre(), TEST_MOVIE.getLength());
         //Then
         Assertions.assertEquals(expected,actual);
         Mockito.verify(movieRepository).updateMovie(TEST_MOVIE.getTitle(), TEST_MOVIE.getGenre(), TEST_MOVIE.getLength());
     }
+
+    @Test
+    void testDeleteMovieShouldReturnOneWhenTheMovieWasDeleted() {
+        //Given
+        int expected=1;
+        Mockito.when(movieRepository.deleteByTitle(TEST_MOVIE.getTitle()))
+                .thenReturn(1);
+        //When
+        int actual = movieService.deleteMovie(TEST_MOVIE.getTitle());
+        //Then
+        Assertions.assertEquals(expected,actual);
+        Mockito.verify(movieRepository).deleteByTitle(TEST_MOVIE.getTitle());
+
+    }
+
+    @Test
+    void testDeleteMovieShouldReturnZeroWhenNoMovieWasDeleted() {
+        //Given
+        int expected=0;
+        Mockito.when(movieRepository.deleteByTitle(TEST_MOVIE.getTitle()))
+                .thenReturn(0);
+        //When
+        int actual = movieService.deleteMovie(TEST_MOVIE.getTitle());
+        //Then
+        Assertions.assertEquals(expected,actual);
+        Mockito.verify(movieRepository).deleteByTitle(TEST_MOVIE.getTitle());
+
+    }
+
+    @Test
+    void testGetMovieListShouldReturnListOfMoviesWhenTheDatabaseIsNotEmpty() {
+        //Given
+        List expected=List.of(movieService.convertEntityToDTO(TEST_MOVIE));
+        Mockito.when(movieRepository.deleteByTitle(TEST_MOVIE.getTitle()))
+                .thenReturn(1);
+        //When
+        int actual = movieService.deleteMovie(TEST_MOVIE.getTitle());
+        //Then
+        Assertions.assertEquals(expected,actual);
+        Mockito.verify(movieRepository).deleteByTitle(TEST_MOVIE.getTitle());
+
+    }
+
 
 }

@@ -101,17 +101,6 @@ public class UserServiceImplTest {
         Mockito.verify(userRepository).findByUsernameAndPassword(TEST_ADMIN.getUsername(), TEST_ADMIN.getPassword());
     }
 
-    @Test
-    void testDescribeShouldReturnOptionalEmptyUserWhenNotSignedIn() {
-        // Given
-        Optional<UserDTO> expected =Optional.empty();
-        // When
-        Optional<UserDTO> actual = userService.describe();
-
-        // Then
-        Assertions.assertEquals(expected, actual);
-    }
-
 
 
 }
