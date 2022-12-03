@@ -2,10 +2,13 @@ package com.epam.training.ticketservice.core.services.serviceimpl;
 
 import com.epam.training.ticketservice.core.entity.RoomEntity;
 import com.epam.training.ticketservice.core.entity.RoomEntity;
+import com.epam.training.ticketservice.core.entity.ScreeningEntity;
 import com.epam.training.ticketservice.core.model.MovieDTO;
 import com.epam.training.ticketservice.core.model.RoomDTO;
 import com.epam.training.ticketservice.core.repository.RoomRepository;
+import com.epam.training.ticketservice.core.repository.ScreeningRepository;
 import com.epam.training.ticketservice.core.services.service.RoomService;
+import com.epam.training.ticketservice.core.services.service.ScreeningService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
@@ -18,6 +21,7 @@ import java.util.stream.Collectors;
 public class RoomServiceImpl implements RoomService {
 
     private final RoomRepository roomRepository;
+    private final ScreeningRepository screeningRepository;
 
     @Override
     public Optional<RoomDTO> createRoom(String name, int rowCount, int columnCount){
@@ -35,7 +39,8 @@ public class RoomServiceImpl implements RoomService {
 
     @Override
     public int deleteRoom(String name){
-        return roomRepository.deleteByName(name);
+        int deletedRow = roomRepository.deleteByName(name);
+        return deletedRow;
     }
 
     @Override

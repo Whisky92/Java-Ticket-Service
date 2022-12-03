@@ -55,6 +55,7 @@ public class MovieCommand {
         return "No rows were deleted";
     }
 
+
     @ShellMethod(key="list movies",value="List all movies")
     public String getMovieList(){
         List<MovieDTO> movies = movieService.getMovieList();

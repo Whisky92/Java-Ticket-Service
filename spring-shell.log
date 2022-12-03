@@ -206,3 +206,95 @@
 1670069872169:create screening Titanic Classroom "2012-04-12 14:52"
 1670069881129:create screening Titanic Classroom "2012-04-12 14:53"
 1670070417732:create screening Titanic Classroom "2012-04-12 14:52"
+1670075654176:sign in privileged admin admin
+1670075658205:create room Classroom 12 3
+1670075663265:create movie Titanic rom 120
+1670075668781:create screening Titanic Classroom "2012-04-12 12:42"
+1670075718090:delete screening Titanic Classroom "2012-04-12 12:42"
+1670075796897:sign in privileged admin admin
+1670075801260:create room Classroom 12 3
+1670075806982:create movie Titanic rom 120
+1670075812289:create screening Titanic Classroom "2012-04-12 12:42"
+1670075816303:delete screening Titanic Classroom "2012-04-12 12:42"
+1670075822885:list screenings
+1670075834346:create screening Titanic Classroom "2012-04-12 12:42"
+1670075843618:list screenings
+1670075844912:delete screening Titanic Classroom "2012-04-12 12:42"
+1670075847880:list screenings
+1670076058297:sign in privileged admin admin
+1670076062914:create room Classroom 12 3
+1670076066351:create movie Titanic rom 120
+1670076070630:create screening Titanic Classroom "2012-04-12 12:42"
+1670076074066:list screenings
+1670076092513:delete screening "2012-04-12 12:42"
+1670077840086:sign in privileged admin admin
+1670077845229:create room Classroom 12 3
+1670077849616:create movie Titanic rom 120
+1670077853886:create screening Titanic Classroom "2012-04-12 12:42"
+1670077857476:delete screening Titanic Classroom "2012-04-12 12:42"
+1670077866378:list screenings
+1670078038729:sign in privileged admin admin
+1670078044424:create room Classroom 12 3
+1670078047915:create movie Titanic rom 120
+1670078052015:create screening Titanic Classroom "2012-04-12 12:42"
+1670078062009:list screenings
+1670083150291:sign in privileged admin admin
+1670083154178:create room Classroom 12 3
+1670083158687:create movie Titanic rom 120
+1670083163871:create screening Titanic Classroom "2012-04-12 12:42"
+1670083168622:delete screening Titanic Classroom "2012-04-12 12:42"
+1670083177676:list screenings
+1670083185839:create screening Titanic Classroom "2012-04-12 12:42"
+1670083190998:delete screening Titanic Classroom "2012-04-12 12:42"
+1670083203762:create screening Titanic Classroom "2012-04-12 12:42"
+1670083207208:list screenings
+1670083211580:delete screening Titanic Classroom "2012-04-12 12:42"
+1670083214429:list screenings
+1670083342234:delete screening Titanic Classroom "2012-04-12 12:42"
+1670083363603:create screening Titanic Classroom "2012-04-12 12:42"
+1670083370724:delete screening Titanic Classroom "2012-04-12 12:41"
+1670085471109:create room Classroom 12 3
+1670085479976:sign in privileged admin admin
+1670085485785:reate room Classroom 12 3
+1670085494003:create room Classroom 12 3
+1670085498955:create movie Titanic rom 120
+1670085504204:create screening Titanic Classroom "2012-04-12 12:42"
+1670085505887:list rooms
+1670085509299:list screenings
+1670085524617:delete room Classroom
+1670086086871:sign in privileged admin admon
+1670086092362:sign in privileged admin admin
+1670086169985:create room classroom 12 12
+1670086176681:create room classroom 45 6
+1670086183553:create room class 4 6
+1670086201262:delete room class
+1670086205132:list rooms
+1670086283362:sign in privileged admin admin
+1670086288134:create room Classroom 12 3
+1670086293577:create movie Titanic rom 120
+1670086297728:create screening Titanic Classroom "2012-04-12 12:42"
+1670086302908:delete screening Titanic Classroom "2012-04-12 12:42"
+1670086309768:create screening Titanic Classroom "2012-04-12 12:42"
+1670086572084:sign in privileged admin admin
+1670086576105:create room Classroom 12 3
+1670086580856:create movie Titanic rom 120
+1670086586127:create screening Titanic Classroom "2012-04-12 12:42"
+1670086590981:delete screening Titanic Classroom "2012-04-12 12:42"
+1670086593285:list rooms
+1670086597047:list movies
+1670086629710:delete room Classroom
+1670086633765:list screenings
+1670086649850:create screening Titanic Classroom "2012-04-12 12:42"
+1670086660221:create room Classroom
+1670086669603:create room Classroom 12 12
+1670086679662:create screening Titanic Classroom "2012-04-12 12:42"
+1670086685211:delete room Classroom
+1670086694911:list screenings
+1670086804683:create room Classroom 12 3
+1670086819135:create screening Titanis Classroom "2012-04-12 12:42"
+1670086825967:create screening Titanic Classroon "2012-04-12 12:42"
+1670086832609:create screening Titanic Classroom "2012-04-12 122"
+1670087513785:sign in privileged admin admin
+1670087525980:create room Classroom 12 3
+1670087552156:delete room Classroom
+1670087555457:list rooms

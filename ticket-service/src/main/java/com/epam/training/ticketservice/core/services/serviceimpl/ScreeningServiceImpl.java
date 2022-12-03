@@ -1,5 +1,6 @@
 package com.epam.training.ticketservice.core.services.serviceimpl;
 
+import com.epam.training.ticketservice.core.dateFormatter.DateFormatter;
 import com.epam.training.ticketservice.core.entity.MovieEntity;
 import com.epam.training.ticketservice.core.entity.RoomEntity;
 import com.epam.training.ticketservice.core.entity.ScreeningEntity;
@@ -13,9 +14,11 @@ import com.epam.training.ticketservice.core.services.service.MovieService;
 import com.epam.training.ticketservice.core.services.service.RoomService;
 import com.epam.training.ticketservice.core.services.service.ScreeningService;
 import lombok.RequiredArgsConstructor;
+import org.springframework.data.jpa.repository.Modifying;
+import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
-import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
@@ -31,18 +34,14 @@ public class ScreeningServiceImpl implements ScreeningService {
     private final MovieService movieService;
     private final RoomRepository roomRepository;
     private final RoomService roomService;
+    private final DateFormatter dateFormatter;
 
     @Override
     public String createScreening(String movieTitle, String roomName, String startTime){
         MovieEntity movie = movieRepository.findByTitle(movieTitle).orElseThrow ( () ->new IllegalArgumentException("No such movie with this title"));
         RoomEntity room = roomRepository.findByName(roomName).orElseThrow ( () ->new IllegalArgumentException("No such room with that name"));
         SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd HH:mm");
-        Date date;
-        try {
-            date = format.parse(startTime);
-        } catch (ParseException e) {
-            return "Invalid date";
-        }
+        Date date = (dateFormatter.formatDate(startTime).orElseThrow(() -> new IllegalArgumentException("Invalid date")));
         String result=isRoomAndTimeWrong(date, movie.getLength(), room.getName());
         if(!result.equals("")){
             return result;
@@ -56,6 +55,14 @@ public class ScreeningServiceImpl implements ScreeningService {
         return screeningRepository.findAll().stream()
                 .map(this::convertEntityToDTO)
                 .collect(Collectors.toList());
+    }
+    @Override
+    public int deleteScreening(String movieTitle, String roomName, String startTime){
+        MovieEntity movie = movieRepository.findByTitle(movieTitle).orElseThrow(()->new IllegalArgumentException("No such movie with that title"));
+        RoomEntity room = roomRepository.findByName(roomName).orElseThrow(()->new IllegalArgumentException("No such room with that name"));
+        Date date = dateFormatter.formatDate(startTime).orElseThrow(()->new IllegalArgumentException("Invalid date"));
+        return screeningRepository.deleteByMovieAndRoomAndTime(movie,room,date);
+
     }
 
 
@@ -75,19 +82,20 @@ public class ScreeningServiceImpl implements ScreeningService {
                 .build();
         return screeningDTO;
     }
+
     private Optional<ScreeningDTO> convertEntityToDTO(Optional<ScreeningEntity> screeningEntity){
         return screeningEntity.isEmpty() ? Optional.empty() : Optional.of(convertEntityToDTO(screeningEntity.get()));
     }
     private String isRoomAndTimeWrong(Date startTime, int length, String room) {
         List<ScreeningEntity> screenings=screeningRepository.findAll();
-        for(int i=0; i<screenings.size(); i++){
-            Date currentStart = screenings.get(i).getTime();
-            int currentLength = screenings.get(i).getMovie().getLength();
+        for (ScreeningEntity screening : screenings) {
+            Date currentStart = screening.getTime();
+            int currentLength = screening.getMovie().getLength();
             Date currentEnd = getEnd(currentStart, currentLength);
-            String currentName = screenings.get(i).getRoom().getName();
-            if(isOverLapping(startTime, getEnd(startTime, length), currentStart, currentEnd) && room.equals(currentName)){
+            String currentName = screening.getRoom().getName();
+            if (isOverLapping(startTime, getEnd(startTime, length), currentStart, currentEnd) && room.equals(currentName)) {
                 return "There is an overlapping screening";
-            }else if(isDuringMovieBreak(startTime, currentEnd, getEnd(currentEnd, 10))){
+            } else if (isDuringMovieBreak(startTime, currentEnd, getEnd(currentEnd, 10))) {
                 return "This would start in the break period after another screening in this room";
             }
         }
@@ -111,4 +119,6 @@ public class ScreeningServiceImpl implements ScreeningService {
         calendar.add(calendar.MINUTE, length);
         return calendar.getTime();
     }
+
+
 }

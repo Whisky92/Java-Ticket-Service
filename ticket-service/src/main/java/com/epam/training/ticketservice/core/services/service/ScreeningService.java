@@ -1,5 +1,7 @@
 package com.epam.training.ticketservice.core.services.service;
 
+import com.epam.training.ticketservice.core.entity.MovieEntity;
+import com.epam.training.ticketservice.core.entity.RoomEntity;
 import com.epam.training.ticketservice.core.model.MovieDTO;
 import com.epam.training.ticketservice.core.model.RoomDTO;
 import com.epam.training.ticketservice.core.model.ScreeningDTO;
@@ -13,6 +15,7 @@ public interface ScreeningService {
 
     List<ScreeningDTO> getScreeningList();
 
+    int deleteScreening(String movieTitle, String roomName, String startTime);
 
 
 }

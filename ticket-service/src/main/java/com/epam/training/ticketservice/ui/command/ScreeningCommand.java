@@ -20,6 +20,7 @@ public class ScreeningCommand {
         return screeningService.createScreening(movieTitle, roomName, startTime);
     }
 
+
     @ShellMethod(key="list screenings", value="List screenings")
     public String getScreeningList(){
         List<ScreeningDTO> screenings = screeningService.getScreeningList();
@@ -36,5 +37,14 @@ public class ScreeningCommand {
                     + screeningDTO.getTime();
         }
         return response;
+    }
+
+    @ShellMethod(key="delete screening", value="Delete a screening")
+    public String deleteScreening(String movieTitle, String roomName, String startTime){
+        boolean rowDeleted=(screeningService.deleteScreening(movieTitle, roomName, startTime)==1);
+        if(rowDeleted){
+            return "A row was deleted";
+        }
+        return "No rows were deleted";
     }
 }

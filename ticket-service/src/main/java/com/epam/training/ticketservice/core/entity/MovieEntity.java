@@ -19,9 +19,4 @@ public class MovieEntity {
     private String title;
     private String genre;
     private Integer length;
-
-    @Override
-    public String toString(){
-        return "Title: "+ title+", genre: "+genre+", length: "+length;
-    }
 }
