@@ -5,11 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="1912464a-0df9-404e-9615-7ad31d96e1a2" name="Changes" comment="Creating some unit tests">
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ticket-service/src/test/java/com/epam/training/ticketservice/core/services/serviceimpl/MovieServiceImplTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/ticket-service/src/test/java/com/epam/training/ticketservice/core/services/serviceimpl/MovieServiceImplTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ticket-service/src/test/java/com/epam/training/ticketservice/core/services/serviceimpl/UserServiceImplTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/ticket-service/src/test/java/com/epam/training/ticketservice/core/services/serviceimpl/UserServiceImplTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ticket-service/target/test-classes/com/epam/training/ticketservice/core/services/serviceimpl/MovieServiceImplTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/ticket-service/target/test-classes/com/epam/training/ticketservice/core/services/serviceimpl/MovieServiceImplTest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ticket-service/src/test/java/com/epam/training/ticketservice/core/services/serviceimpl/RoomServiceImplTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/ticket-service/src/test/java/com/epam/training/ticketservice/core/services/serviceimpl/RoomServiceImplTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -81,32 +78,32 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RequestMappingsPanelOrder0": "0",
-    "RequestMappingsPanelOrder1": "1",
-    "RequestMappingsPanelWidth0": "75",
-    "RequestMappingsPanelWidth1": "75",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary": "JUnit5",
-    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5": "",
-    "create.test.in.the.same.root": "true",
-    "last_opened_file_path": "D:/Dokumentumok/szoft/projekt/homework-project-Whisky92",
-    "node.js.detected.package.eslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "project.structure.last.edited": "Project",
-    "project.structure.proportion": "0.0",
-    "project.structure.side.proportion": "0.0",
-    "settings.editor.selected.configurable": "preferences.lookFeel",
-    "spring.configuration.checksum": "fbeb12f27724a51b4dce1148652e39e7",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RequestMappingsPanelOrder0&quot;: &quot;0&quot;,
+    &quot;RequestMappingsPanelOrder1&quot;: &quot;1&quot;,
+    &quot;RequestMappingsPanelWidth0&quot;: &quot;75&quot;,
+    &quot;RequestMappingsPanelWidth1&quot;: &quot;75&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary&quot;: &quot;JUnit5&quot;,
+    &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5&quot;: &quot;&quot;,
+    &quot;create.test.in.the.same.root&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;D:/Dokumentumok/szoft/projekt/homework-project-Whisky92&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.lookFeel&quot;,
+    &quot;spring.configuration.checksum&quot;: &quot;fbeb12f27724a51b4dce1148652e39e7&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CreateTestDialog.Recents.Supers">
       <recent name="" />
@@ -115,7 +112,7 @@
       <recent name="com.epam.training.ticketservice.core.services.serviceimpl" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.MovieServiceImplTest.testDeleteMovieShouldReturnZeroWhenNoMovieWasDeleted">
+  <component name="RunManager" selected="JUnit.RoomServiceImplTest.testCreateMovieShouldReturnOptionalEmptyWhenMovieTitleDoesNotExist">
     <configuration name="MovieServiceImplTest.testCreateMovieShouldReturnOneWhenTheMovieWasUpdated" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="ticket-service" />
       <extension name="coverage">
@@ -127,22 +124,6 @@
       <option name="PACKAGE_NAME" value="com.epam.training.ticketservice.core.services.serviceimpl" />
       <option name="MAIN_CLASS_NAME" value="com.epam.training.ticketservice.core.services.serviceimpl.MovieServiceImplTest" />
       <option name="METHOD_NAME" value="testCreateMovieShouldReturnOneWhenTheMovieWasUpdated" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="MovieServiceImplTest.testCreateMovieShouldReturnOptionalMovieWhenMovieTitleExists" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="ticket-service" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.epam.training.ticketservice.core.services.serviceimpl.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="com.epam.training.ticketservice.core.services.serviceimpl" />
-      <option name="MAIN_CLASS_NAME" value="com.epam.training.ticketservice.core.services.serviceimpl.MovieServiceImplTest" />
-      <option name="METHOD_NAME" value="testCreateMovieShouldReturnOptionalMovieWhenMovieTitleExists" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -196,6 +177,22 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="RoomServiceImplTest.testCreateMovieShouldReturnOptionalEmptyWhenMovieTitleDoesNotExist" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="ticket-service" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.epam.training.ticketservice.core.services.serviceimpl.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.epam.training.ticketservice.core.services.serviceimpl" />
+      <option name="MAIN_CLASS_NAME" value="com.epam.training.ticketservice.core.services.serviceimpl.RoomServiceImplTest" />
+      <option name="METHOD_NAME" value="testCreateMovieShouldReturnOptionalEmptyWhenMovieTitleDoesNotExist" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="Application" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
       <module name="ticket-service" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="com.epam.training.ticketservice.Application" />
@@ -205,11 +202,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.RoomServiceImplTest.testCreateMovieShouldReturnOptionalEmptyWhenMovieTitleDoesNotExist" />
         <item itemvalue="JUnit.MovieServiceImplTest.testDeleteMovieShouldReturnZeroWhenNoMovieWasDeleted" />
         <item itemvalue="JUnit.MovieServiceImplTest.testDeleteMovieShouldReturnOneWhenTheMovieWasDeleted" />
         <item itemvalue="JUnit.MovieServiceImplTest.testCreateMovieShouldReturnZeroWhenTheMovieWasNotUpdated" />
         <item itemvalue="JUnit.MovieServiceImplTest.testCreateMovieShouldReturnOneWhenTheMovieWasUpdated" />
-        <item itemvalue="JUnit.MovieServiceImplTest.testCreateMovieShouldReturnOptionalMovieWhenMovieTitleExists" />
       </list>
     </recent_temporary>
   </component>
