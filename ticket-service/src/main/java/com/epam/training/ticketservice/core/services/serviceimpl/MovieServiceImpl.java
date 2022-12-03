@@ -3,7 +3,7 @@ package com.epam.training.ticketservice.core.services.serviceimpl;
 import com.epam.training.ticketservice.core.entity.MovieEntity;
 import com.epam.training.ticketservice.core.model.MovieDTO;
 import com.epam.training.ticketservice.core.repository.MovieRepository;
-import com.epam.training.ticketservice.core.services.service.MovieService;
+import com.epam.training.ticketservice.core.services.MovieService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 

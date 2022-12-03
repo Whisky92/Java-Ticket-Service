@@ -4,26 +4,20 @@ import com.epam.training.ticketservice.core.dateFormatter.DateFormatter;
 import com.epam.training.ticketservice.core.entity.MovieEntity;
 import com.epam.training.ticketservice.core.entity.RoomEntity;
 import com.epam.training.ticketservice.core.entity.ScreeningEntity;
-import com.epam.training.ticketservice.core.model.MovieDTO;
-import com.epam.training.ticketservice.core.model.RoomDTO;
 import com.epam.training.ticketservice.core.model.ScreeningDTO;
 import com.epam.training.ticketservice.core.repository.MovieRepository;
 import com.epam.training.ticketservice.core.repository.RoomRepository;
 import com.epam.training.ticketservice.core.repository.ScreeningRepository;
-import com.epam.training.ticketservice.core.services.service.MovieService;
-import com.epam.training.ticketservice.core.services.service.RoomService;
-import com.epam.training.ticketservice.core.services.service.ScreeningService;
+import com.epam.training.ticketservice.core.services.MovieService;
+import com.epam.training.ticketservice.core.services.RoomService;
+import com.epam.training.ticketservice.core.services.ScreeningService;
 import lombok.RequiredArgsConstructor;
-import org.springframework.data.jpa.repository.Modifying;
-import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Service;
-import org.springframework.transaction.annotation.Transactional;
 
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.List;
-import java.util.Optional;
 import java.util.stream.Collectors;
 
 @Service
@@ -67,58 +61,54 @@ public class ScreeningServiceImpl implements ScreeningService {
 
 
     private ScreeningEntity createEntity(MovieEntity movie, RoomEntity room, Date startTime){
-        ScreeningEntity screeningEntity = ScreeningEntity.builder()
+        return ScreeningEntity.builder()
                 .withMovie(movie)
                 .withRoom(room)
                 .withTime(startTime)
                 .build();
-        return screeningEntity;
     }
     private ScreeningDTO convertEntityToDTO(ScreeningEntity screeningEntity){
-        ScreeningDTO screeningDTO = ScreeningDTO.builder()
+        return ScreeningDTO.builder()
                 .withMovie(movieService.convertEntityToDTO(screeningEntity.getMovie()))
                 .withRoom(roomService.convertEntityToDTO(screeningEntity.getRoom()))
                 .withTime(screeningEntity.getTime())
                 .build();
-        return screeningDTO;
     }
 
-    private Optional<ScreeningDTO> convertEntityToDTO(Optional<ScreeningEntity> screeningEntity){
-        return screeningEntity.isEmpty() ? Optional.empty() : Optional.of(convertEntityToDTO(screeningEntity.get()));
-    }
     private String isRoomAndTimeWrong(Date startTime, int length, String room) {
         List<ScreeningEntity> screenings=screeningRepository.findAll();
+        Date endTime = getTime(startTime, length);
         for (ScreeningEntity screening : screenings) {
             Date currentStart = screening.getTime();
             int currentLength = screening.getMovie().getLength();
-            Date currentEnd = getEnd(currentStart, currentLength);
+            Date currentEnd = getTime(currentStart, currentLength);
             String currentName = screening.getRoom().getName();
-            if (isOverLapping(startTime, getEnd(startTime, length), currentStart, currentEnd) && room.equals(currentName)) {
+            if (isOverLapping(startTime, getTime(startTime, length), currentStart, currentEnd) && room.equals(currentName)) {
                 return "There is an overlapping screening";
-            } else if (isDuringMovieBreak(startTime, currentEnd, getEnd(currentEnd, 10))) {
+            } else if (isDuringMovieBreak(startTime, currentEnd, endTime) || isDuringMovieBreak(endTime,getTime(currentStart,-10) ,currentStart)) {
                 return "This would start in the break period after another screening in this room";
             }
         }
         return "";
     }
 
-    private boolean isOverLapping(Date startOfFirst, Date endOfFirst, Date startOfSecond, Date endofSecond){
-        return (!(endOfFirst.compareTo(startOfSecond)!=1 || startOfFirst.compareTo(endofSecond)!=-1));
+    private boolean isOverLapping(Date startOfFirst, Date endOfFirst, Date startOfSecond, Date endOfSecond){
+        final int PLUS = 1;
+        return (startOfFirst.compareTo(endOfSecond)!=PLUS && startOfSecond.compareTo(endOfFirst)!=PLUS);
     }
 
-    private boolean isDuringMovieBreak(Date startOfMovie, Date startOfBreak, Date endOfBreak){
-        if(startOfMovie.compareTo(startOfBreak)!=-1 && startOfMovie.compareTo(endOfBreak)!=1){
+    private boolean isDuringMovieBreak(Date startOrEndOfMovie, Date startOfBreak, Date endOfBreak){
+        if(startOrEndOfMovie.compareTo(startOfBreak)!=-1 && startOrEndOfMovie.compareTo(endOfBreak)!=1){
             return true;
         }
         return false;
     }
 
-    private Date getEnd(Date startTime, Integer length){
+    private Date getTime(Date startTime, Integer length){
         Calendar calendar = Calendar.getInstance();
         calendar.setTime(startTime);
         calendar.add(calendar.MINUTE, length);
         return calendar.getTime();
     }
-
 
 }

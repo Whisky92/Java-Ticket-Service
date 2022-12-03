@@ -1,14 +1,10 @@
 package com.epam.training.ticketservice.core.services.serviceimpl;
 
 import com.epam.training.ticketservice.core.entity.RoomEntity;
-import com.epam.training.ticketservice.core.entity.RoomEntity;
-import com.epam.training.ticketservice.core.entity.ScreeningEntity;
-import com.epam.training.ticketservice.core.model.MovieDTO;
 import com.epam.training.ticketservice.core.model.RoomDTO;
 import com.epam.training.ticketservice.core.repository.RoomRepository;
 import com.epam.training.ticketservice.core.repository.ScreeningRepository;
-import com.epam.training.ticketservice.core.services.service.RoomService;
-import com.epam.training.ticketservice.core.services.service.ScreeningService;
+import com.epam.training.ticketservice.core.services.RoomService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 

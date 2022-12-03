@@ -12,14 +12,16 @@
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
-      <module name="Java-Ticket-Service" target="11" />
+      <module name="Java-Ticket-Service" target="1.8" />
       <module name="ticket-service" target="11" />
-      <module name="ticket-service-acceptance-tests" target="11" />
+      <module name="ticket-service-acceptance-tests" target="1.8" />
     </bytecodeTargetLevel>
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="Java-Ticket-Service" options="-parameters" />
       <module name="ticket-service" options="-parameters" />
+      <module name="ticket-service-acceptance-tests" options="-parameters" />
     </option>
   </component>
 </project>
