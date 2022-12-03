@@ -1,12 +1,16 @@
 package com.epam.training.ticketservice.ui.command;
 
+import com.epam.training.ticketservice.core.entity.UserEntity;
 import com.epam.training.ticketservice.core.model.MovieDTO;
 import com.epam.training.ticketservice.core.model.UserDTO;
 import com.epam.training.ticketservice.core.repository.MovieRepository;
 import com.epam.training.ticketservice.core.services.service.MovieService;
+import com.epam.training.ticketservice.core.services.service.UserService;
 import lombok.AllArgsConstructor;
+import org.springframework.shell.Availability;
 import org.springframework.shell.standard.ShellComponent;
 import org.springframework.shell.standard.ShellMethod;
+import org.springframework.shell.standard.ShellMethodAvailability;
 
 import java.util.List;
 import java.util.Optional;
@@ -17,6 +21,8 @@ public class MovieCommand {
 
     private final MovieService movieService;
 
+    private final UserService userService;
+    @ShellMethodAvailability("isAdminAndLoggedIn")
     @ShellMethod(key="create movie", value="Create a new movie")
     public String createMovie(String title,String genre, int length){
         try {
@@ -30,7 +36,7 @@ public class MovieCommand {
             return "Registration failed";
         }
     }
-
+    @ShellMethodAvailability("isAdminAndLoggedIn")
     @ShellMethod(key="update movie",value="Update a movie")
     public String updateMovie(String title, String genre, int length){
         boolean rowChanged = (movieService.updateMovie(title, genre, length)==1);
@@ -39,7 +45,7 @@ public class MovieCommand {
         }
         return "No rows were updated";
     }
-
+    @ShellMethodAvailability("isAdminAndLoggedIn")
     @ShellMethod(key="delete movie",value = "Delete a movie")
     public String deleteMovie(String title){
         boolean rowDeleted=(movieService.deleteMovie(title)==1);
@@ -65,5 +71,10 @@ public class MovieCommand {
         return response;
     }
 
+    private Availability isAdminAndLoggedIn() {
+        return userService.describe().isPresent() && userService.describe().get().getRole()== UserEntity.Role.ADMIN
+                ? Availability.available()
+                : Availability.unavailable("You are not logged in as an admin!");
+    }
 
 }

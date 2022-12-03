@@ -5,10 +5,10 @@ import lombok.Value;
 
 import java.util.Date;
 
-@Builder
+@Builder(setterPrefix = "with")
 @Value
 public class ScreeningDTO{
-    private final MovieDTO movieDTO;
-    private final RoomDTO roomDTO;
-    private final Date date;
+    private final MovieDTO movie;
+    private final RoomDTO room;
+    private final Date time;
 }

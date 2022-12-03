@@ -49,7 +49,7 @@ public class RoomServiceImpl implements RoomService {
         return new RoomEntity(name,rowCount,columnCount);
     }
 
-    private RoomDTO convertEntityToDTO(RoomEntity roomEntity){
+    public RoomDTO convertEntityToDTO(RoomEntity roomEntity){
         return RoomDTO.builder()
                 .withName(roomEntity.getName())
                 .withRowCount(roomEntity.getRowCount())

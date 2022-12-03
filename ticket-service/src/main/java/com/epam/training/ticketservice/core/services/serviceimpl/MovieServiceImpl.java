@@ -25,6 +25,7 @@ public class MovieServiceImpl implements MovieService {
         }
         return movieDTO;
     }
+
     @Override
     public int updateMovie(String title, String genre, int length){
         return movieRepository.updateMovie(title, genre, length);
@@ -46,7 +47,7 @@ public class MovieServiceImpl implements MovieService {
         return new MovieEntity(title,genre,length);
     }
 
-    private MovieDTO convertEntityToDTO(MovieEntity movieEntity){
+    public MovieDTO convertEntityToDTO(MovieEntity movieEntity){
         return MovieDTO.builder()
                 .withTitle(movieEntity.getTitle())
                 .withGenre(movieEntity.getGenre())

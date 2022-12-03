@@ -9,7 +9,7 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
-@Table(name="Rooms")
+@Table(name="rooms")
 @Data
 @NoArgsConstructor
 @AllArgsConstructor

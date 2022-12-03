@@ -5,8 +5,10 @@ import com.epam.training.ticketservice.core.model.UserDTO;
 import com.epam.training.ticketservice.core.services.service.UserService;
 import com.epam.training.ticketservice.core.state.State;
 import lombok.AllArgsConstructor;
+import org.springframework.shell.Availability;
 import org.springframework.shell.standard.ShellComponent;
 import org.springframework.shell.standard.ShellMethod;
+import org.springframework.shell.standard.ShellMethodAvailability;
 
 import java.util.Optional;
 
@@ -39,7 +41,7 @@ public class UserCommand {
         return "Invalid credentials";
 
     }
-
+    @ShellMethodAvailability("isAdminAndLoggedIn")
     @ShellMethod(key="sign out",value="Admin sign out")
     public String logoutAsAdmin(){
         State user = userService.logoutAsAdmin();
@@ -82,6 +84,12 @@ public class UserCommand {
         }catch(Exception e){
             return "Registration failed";
         }
+    }
+
+    private Availability isAdminAndLoggedIn() {
+        return userService.describe().isPresent() && userService.describe().get().getRole()== UserEntity.Role.ADMIN
+                ? Availability.available()
+                : Availability.unavailable("You are not logged in as an admin!");
     }
 
 

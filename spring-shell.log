@@ -90,3 +90,119 @@
 1669754704072:sign in privileged admin admin
 1669754707378:sign out
 1669757133828:exit
+1670023348252:list screening
+1670023351668:help
+1670023362118:list screenings
+1670023465435:create screening
+1670023484032:create movie Titanic komedia 120
+1670023502662:create room Room1 4 6
+1670023609589:create room room 3 5
+1670023621069:create movie Titanic kom 23
+1670023626548:room list
+1670023631396:list rooms
+1670023654436:list movies
+1670023664805:list screenings
+1670023761533:create screening Titanic room "2002-04-14 11:20"
+1670023869928:list screenings
+1670024218863:create movie Titanic kom 120
+1670024224322:create room Bedroom 2 5
+1670024306370:create screening Titanic Bedroom "2015-11-20 14:12"
+1670026053280:create movie Titanic kom 120
+1670026057783:create room Bedroom 2 5
+1670026069117:create screening Titanic Bedroom "2015-11-20 14:12"
+1670026080984:stacktrace
+1670027418621:help
+1670027445548:sign in privileged admin admin
+1670027447407:help
+1670027474456:user register asd asd
+1670027480749:user list
+1670027483014:list user
+1670027486561:list users
+1670027488776:clear
+1670027495114:user
+1670027497602:help
+1670027503339:register movie asd asd
+1670027518390:create movie Titanic asd 20
+1670027526026:create Room asd 20 20
+1670027532308:create room asd 20 20
+1670027597602:create screening Titanic asd "2012-05-20 12:12"
+1670028011885:create movie "Veszélyes vizeken" akcio 12
+1670028030791:sign in privileged admin admin
+1670028039660:create movie "Veszélyes vizeken" akcio 12
+1670028048709:list moves
+1670028053316:list movies
+1670028829029:create movie Titanic kom 120
+1670028839071:sign in privileged admin admin
+1670028845390:create movie Titanic kom 120
+1670028857431:create room Bedroom 2 5
+1670028866405:create screening Titanic Bedroom "2015-11-20 14:12"
+1670029922106:create movie Titanic kom 120
+1670029930623:sign in privileged admin admin
+1670029932605:create movie Titanic kom 120
+1670029939077:create room Bedroom 2 5
+1670029943785:create screening Titanic Bedroom "2015-11-20 14:12"
+1670029957310:stacktrace
+1670061667220:sign in privileged admin admion
+1670061672806:sign in privileged admin admin
+1670061675982:create room Classroom 12 3
+1670061707654:room list
+1670061712704:list rooms
+1670061724718:create movie Titanic rom 120
+1670061731131:list movies
+1670061766120:create screening Titanic Classroom "2012-01-21 12:33"
+1670064021781:create room Classroom 12 12
+1670064031422:sign in privileged asd asd
+1670064038903:sign in privileged admin admin
+1670064050435:create room Classroom 12 12
+1670064473011:create room Classroom 12 3
+1670064481255:sign in privileged admin admin
+1670064484130:create room Classroom 12 3
+1670064491375:create movie Titanic rom 120
+1670064581169:create screening Titanic Classroom "2012-04-12 12:42"
+1670064792543:sign in privileged admin admin
+1670064798157:create room Classroom 12 3
+1670064802677:create movie Titanic rom 120
+1670064807042:create screening Titanic Classroom "2012-04-12 12:42"
+1670065069688:sign in privileged admin admin
+1670065074407:create room Classroom 12 3
+1670065079188:create movie Titanic rom 120
+1670065085077:create screening Titanic Classroom "2012-04-12 12:42"
+1670066425844:sign in privileged admin admin
+1670066429990:create room Classroom 12 3
+1670066435828:create movie Titanic rom 120
+1670066439768:create screening Titanic Classroom "2012-04-12 12:42"
+1670067153384:stacktrace
+1670067553326:create room Classroom 12 3
+1670067559979:sign in privileged admin admin
+1670067564299:create room Classroom 12 3
+1670067568812:create movie Titanic rom 120
+1670067573909:create screening Titanic Classroom "2012-04-12 12:42"
+1670067642844:sign in privileged admin admin
+1670067647233:create room Classroom 12 3
+1670067653076:create movie Titanic rom 120
+1670067659732:create screening Titanic Classroom "2012-04-12 12:42"
+1670068504738:sign in privileged admin admin
+1670068509384:create room Classroom 12 3
+1670068513950:create movie Titanic rom 120
+1670068519589:create screening Titanic Classroom "2012-04-12 12:42"
+1670068667497:stacktrace
+1670068796461:sign in privileged admin admin
+1670068801212:create room Classroom 12 3
+1670068807592:create movie Titanic rom 120
+1670068811904:create screening Titanic Classroom "2012-04-12 12:42"
+1670068906408:list screenings
+1670068981057:create screening asd Classroom "2014-12-11 11:11"
+1670069061274:create screening Titanic Roomasd "2015-12-22 10:01"
+1670069248614:create screening Titanic Classroom "2012-04-12 10:45"
+1670069520354:create room Classroom 12 3
+1670069532154:sign in privileged admin admin
+1670069536560:create room Classroom 12 3
+1670069540087:create movie Titanic rom 120
+1670069545031:create screening Titanic Classroom "2012-04-12 12:42"
+1670069583141:create screening Titanic Classroom "2012-04-12 10:43"
+1670069587177:create screening Titanic Classroom "2012-04-12 10:42"
+1670069803501:create screening Titanic Classroom "2012-04-12 14:42"
+1670069839902:create screening Titanic Classroom "2012-04-12 14:41"
+1670069872169:create screening Titanic Classroom "2012-04-12 14:52"
+1670069881129:create screening Titanic Classroom "2012-04-12 14:53"
+1670070417732:create screening Titanic Classroom "2012-04-12 14:52"

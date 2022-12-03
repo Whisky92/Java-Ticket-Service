@@ -5,9 +5,14 @@ import com.epam.training.ticketservice.core.model.RoomDTO;
 import com.epam.training.ticketservice.core.model.ScreeningDTO;
 
 import java.util.Date;
+import java.util.List;
 import java.util.Optional;
 
 public interface ScreeningService {
-    Optional<ScreeningDTO> createService(MovieDTO movie, RoomDTO room, Date startTime);
+    String createScreening(String movieTitle, String roomName, String startTime);
+
+    List<ScreeningDTO> getScreeningList();
+
+
 
 }
