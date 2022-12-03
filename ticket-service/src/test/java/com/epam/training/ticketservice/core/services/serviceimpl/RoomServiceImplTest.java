@@ -27,7 +27,7 @@ public class RoomServiceImplTest {
     @Test
     void testCreateMovieShouldReturnOptionalEmptyWhenMovieTitleDoesNotExist() {
         //Given
-        Optional<MovieDTO> expected = Optional.empty();
+        Optional<RoomDTO> expected = Optional.empty();
         Mockito.when(roomRepository.findByName(TEST_ROOM.getName()))
                 .thenReturn(Optional.empty());
         //When
@@ -36,6 +36,76 @@ public class RoomServiceImplTest {
         //Then
         Assertions.assertEquals(expected,actual);
         Mockito.verify(roomRepository).findByName(TEST_ROOM.getName());
+    }
+
+    @Test
+    void testCreateMovieShouldReturnOptionalMovieWhenMovieTitleExists() {
+        //Given
+        Optional<RoomDTO> expected = Optional
+                .of(new RoomDTO(TEST_ROOM.getName(),TEST_ROOM.getRowCount(),TEST_ROOM.getColumnCount()));
+        Mockito.when(roomRepository.findByName(TEST_ROOM.getName()))
+                .thenReturn(Optional.of(TEST_ROOM));
+        //When
+        Optional<RoomDTO> actual = roomService.createRoom(TEST_ROOM.getName(),TEST_ROOM.getRowCount(),TEST_ROOM.getColumnCount());
+        //Then
+        Assertions.assertEquals(expected, actual);
+        Mockito.verify(roomRepository).findByName(TEST_ROOM.getName());
+    }
+
+    @Test
+    void testCreateMovieShouldReturnOneWhenTheMovieWasUpdated() {
+        //Given
+        int expected = 1;
+        Mockito.when(roomRepository.updateRoom(TEST_ROOM.getName(),TEST_ROOM.getRowCount(),TEST_ROOM.getColumnCount()))
+                .thenReturn(1);
+        //When
+        int actual = roomService.updateRoom(TEST_ROOM.getName(), TEST_ROOM.getRowCount(), TEST_ROOM.getColumnCount());
+        //Then
+        Assertions.assertEquals(expected,actual);
+        Mockito.verify(roomRepository)
+                .updateRoom(TEST_ROOM.getName(), TEST_ROOM.getRowCount(), TEST_ROOM.getColumnCount());
+    }
+
+    @Test
+    void testCreateMovieShouldReturnZeroWhenTheMovieWasNotUpdated() {
+        //Given
+        int expected = 0;
+        Mockito.when(roomRepository.updateRoom(TEST_ROOM.getName(), TEST_ROOM.getRowCount(), TEST_ROOM.getColumnCount()))
+                .thenReturn(0);
+        //When
+        int actual = roomService.updateRoom(TEST_ROOM.getName(), TEST_ROOM.getRowCount(), TEST_ROOM.getColumnCount());
+        //Then
+        Assertions.assertEquals(expected, actual);
+        Mockito.verify(roomRepository)
+                .updateRoom(TEST_ROOM.getName(), TEST_ROOM.getRowCount(), TEST_ROOM.getColumnCount());
+    }
+
+    @Test
+    void testDeleteMovieShouldReturnOneWhenTheMovieWasDeleted() {
+        //Given
+        int expected = 1;
+        Mockito.when(roomRepository.deleteByName(TEST_ROOM.getName()))
+                .thenReturn(1);
+        //When
+        int actual = roomService.deleteRoom(TEST_ROOM.getName());
+        //Then
+        Assertions.assertEquals(expected, actual);
+        Mockito.verify(roomRepository).deleteByName(TEST_ROOM.getName());
+
+    }
+
+    @Test
+    void testDeleteMovieShouldReturnZeroWhenNoMovieWasDeleted() {
+        //Given
+        int expected = 0;
+        Mockito.when(roomRepository.deleteByName(TEST_ROOM.getName()))
+                .thenReturn(0);
+        //When
+        int actual = roomService.deleteRoom(TEST_ROOM.getName());
+        //Then
+        Assertions.assertEquals(expected,actual);
+        Mockito.verify(roomRepository).deleteByName(TEST_ROOM.getName());
+
     }
 
 

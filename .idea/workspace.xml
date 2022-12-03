@@ -4,9 +4,19 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1912464a-0df9-404e-9615-7ad31d96e1a2" name="Changes" comment="Creating some unit tests">
+    <list default="true" id="1912464a-0df9-404e-9615-7ad31d96e1a2" name="Changes" comment="Adding unit tests">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ticket-service/src/main/java/com/epam/training/ticketservice/core/model/RoomDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/ticket-service/src/main/java/com/epam/training/ticketservice/core/model/RoomDTO.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ticket-service/src/test/java/com/epam/training/ticketservice/core/services/serviceimpl/RoomServiceImplTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/ticket-service/src/test/java/com/epam/training/ticketservice/core/services/serviceimpl/RoomServiceImplTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ticket-service/target/classes/com/epam/training/ticketservice/core/entity/ScreeningEntity$ScreeningEntityBuilder.class" beforeDir="false" afterPath="$PROJECT_DIR$/ticket-service/target/classes/com/epam/training/ticketservice/core/entity/ScreeningEntity$ScreeningEntityBuilder.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ticket-service/target/classes/com/epam/training/ticketservice/core/entity/UserEntity$Role.class" beforeDir="false" afterPath="$PROJECT_DIR$/ticket-service/target/classes/com/epam/training/ticketservice/core/entity/UserEntity$Role.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ticket-service/target/classes/com/epam/training/ticketservice/core/model/MovieDTO$Builder.class" beforeDir="false" afterPath="$PROJECT_DIR$/ticket-service/target/classes/com/epam/training/ticketservice/core/model/MovieDTO$Builder.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ticket-service/target/classes/com/epam/training/ticketservice/core/model/RoomDTO$RoomDTOBuilder.class" beforeDir="false" afterPath="$PROJECT_DIR$/ticket-service/target/classes/com/epam/training/ticketservice/core/model/RoomDTO$RoomDTOBuilder.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ticket-service/target/classes/com/epam/training/ticketservice/core/model/ScreeningDTO$ScreeningDTOBuilder.class" beforeDir="false" afterPath="$PROJECT_DIR$/ticket-service/target/classes/com/epam/training/ticketservice/core/model/ScreeningDTO$ScreeningDTOBuilder.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ticket-service/target/test-classes/com/epam/training/ticketservice/core/services/serviceimpl/MovieServiceImplTest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ticket-service/target/test-classes/com/epam/training/ticketservice/core/services/serviceimpl/RoomServiceImplTest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ticket-service/target/test-classes/com/epam/training/ticketservice/core/services/serviceimpl/ScreeningServiceImplTest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ticket-service/target/test-classes/com/epam/training/ticketservice/core/services/serviceimpl/UserServiceImplTest.class" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -112,23 +122,7 @@
       <recent name="com.epam.training.ticketservice.core.services.serviceimpl" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.RoomServiceImplTest.testCreateMovieShouldReturnOptionalEmptyWhenMovieTitleDoesNotExist">
-    <configuration name="MovieServiceImplTest.testCreateMovieShouldReturnOneWhenTheMovieWasUpdated" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="ticket-service" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.epam.training.ticketservice.core.services.serviceimpl.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="com.epam.training.ticketservice.core.services.serviceimpl" />
-      <option name="MAIN_CLASS_NAME" value="com.epam.training.ticketservice.core.services.serviceimpl.MovieServiceImplTest" />
-      <option name="METHOD_NAME" value="testCreateMovieShouldReturnOneWhenTheMovieWasUpdated" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
+  <component name="RunManager" selected="JUnit.RoomServiceImplTest">
     <configuration name="MovieServiceImplTest.testCreateMovieShouldReturnZeroWhenTheMovieWasNotUpdated" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="ticket-service" />
       <extension name="coverage">
@@ -177,6 +171,21 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="RoomServiceImplTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="ticket-service" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.epam.training.ticketservice.core.services.serviceimpl.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.epam.training.ticketservice.core.services.serviceimpl" />
+      <option name="MAIN_CLASS_NAME" value="com.epam.training.ticketservice.core.services.serviceimpl.RoomServiceImplTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="RoomServiceImplTest.testCreateMovieShouldReturnOptionalEmptyWhenMovieTitleDoesNotExist" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="ticket-service" />
       <extension name="coverage">
@@ -202,11 +211,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.RoomServiceImplTest" />
         <item itemvalue="JUnit.RoomServiceImplTest.testCreateMovieShouldReturnOptionalEmptyWhenMovieTitleDoesNotExist" />
         <item itemvalue="JUnit.MovieServiceImplTest.testDeleteMovieShouldReturnZeroWhenNoMovieWasDeleted" />
         <item itemvalue="JUnit.MovieServiceImplTest.testDeleteMovieShouldReturnOneWhenTheMovieWasDeleted" />
         <item itemvalue="JUnit.MovieServiceImplTest.testCreateMovieShouldReturnZeroWhenTheMovieWasNotUpdated" />
-        <item itemvalue="JUnit.MovieServiceImplTest.testCreateMovieShouldReturnOneWhenTheMovieWasUpdated" />
       </list>
     </recent_temporary>
   </component>
@@ -289,7 +298,14 @@
       <option name="project" value="LOCAL" />
       <updated>1670105059860</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="Adding unit tests">
+      <created>1670107867117</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1670107867117</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -306,7 +322,8 @@
     <MESSAGE value="Renaming table in UserEntity" />
     <MESSAGE value="Adding Screening deletion method, creating Date formatting class" />
     <MESSAGE value="Creating some unit tests" />
-    <option name="LAST_COMMIT_MESSAGE" value="Creating some unit tests" />
+    <MESSAGE value="Adding unit tests" />
+    <option name="LAST_COMMIT_MESSAGE" value="Adding unit tests" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/Java_Ticket_Service$Application.ic" NAME="Application Coverage Results" MODIFIED="1670023840336" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
