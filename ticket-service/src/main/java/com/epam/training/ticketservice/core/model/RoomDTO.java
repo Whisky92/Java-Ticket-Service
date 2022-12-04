@@ -7,7 +7,7 @@ import lombok.Value;
 @Builder(setterPrefix = "with")
 @AllArgsConstructor
 @Value
-public class RoomDTO{
+public class RoomDTO {
 
     private final String name;
 

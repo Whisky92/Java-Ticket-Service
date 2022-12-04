@@ -20,7 +20,7 @@ public class RoomServiceImpl implements RoomService {
     @Override
     public Optional<RoomDTO> createRoom(String name, int rowCount, int columnCount) {
         Optional<RoomDTO> roomDTO = convertEntityToDTO(roomRepository.findByName(name));
-        if(roomDTO.isEmpty()) {
+        if (roomDTO.isEmpty()) {
             roomRepository.save(createEntity(name, rowCount, columnCount));
         }
         return roomDTO;
@@ -33,8 +33,7 @@ public class RoomServiceImpl implements RoomService {
 
     @Override
     public int deleteRoom(String name) {
-        int deletedRow = roomRepository.deleteByName(name);
-        return deletedRow;
+        return roomRepository.deleteByName(name);
     }
 
     @Override

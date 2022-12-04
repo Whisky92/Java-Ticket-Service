@@ -12,8 +12,9 @@ import java.util.Optional;
 @AllArgsConstructor
 @EqualsAndHashCode
 public class DateFormatter {
-    public Optional<Date> formatDate(String date) {
-        SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd HH:mm");
+
+    private final SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd HH:mm");
+    public Optional<Date> formatStringToDate(String date) {
         Date formattedDate;
         try {
             formattedDate = format.parse(date);
@@ -21,5 +22,9 @@ public class DateFormatter {
             return Optional.empty();
         }
         return Optional.of(formattedDate);
+    }
+
+    public String formatDateToString(Date date) {
+        return format.format(date);
     }
 }

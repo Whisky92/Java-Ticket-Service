@@ -20,7 +20,7 @@ public class MovieServiceImpl implements MovieService {
     @Override
     public Optional<MovieDTO> createMovie(String title, String genre, int length) {
         Optional<MovieDTO> movieDTO = convertEntityToDTO(movieRepository.findByTitle(title));
-        if(movieDTO.isEmpty()) {
+        if (movieDTO.isEmpty()) {
             movieRepository.save(createEntity(title, genre, length));
         }
         return movieDTO;

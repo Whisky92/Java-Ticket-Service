@@ -6,17 +6,65 @@
   <component name="ChangeListManager">
     <list default="true" id="1912464a-0df9-404e-9615-7ad31d96e1a2" name="Changes" comment="Adding unit tests">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/spring-shell.log" beforeDir="false" afterPath="$PROJECT_DIR$/spring-shell.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ticket-service/src/main/java/com/epam/training/ticketservice/Application.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ticket-service/src/main/java/com/epam/training/ticketservice/core/dateFormatter/DateFormatter.java" beforeDir="false" afterPath="$PROJECT_DIR$/ticket-service/src/main/java/com/epam/training/ticketservice/core/dateFormatter/DateFormatter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ticket-service/src/main/java/com/epam/training/ticketservice/core/model/MovieDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/ticket-service/src/main/java/com/epam/training/ticketservice/core/model/MovieDTO.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ticket-service/src/main/java/com/epam/training/ticketservice/core/model/RoomDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/ticket-service/src/main/java/com/epam/training/ticketservice/core/model/RoomDTO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ticket-service/src/test/java/com/epam/training/ticketservice/core/services/serviceimpl/RoomServiceImplTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/ticket-service/src/test/java/com/epam/training/ticketservice/core/services/serviceimpl/RoomServiceImplTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ticket-service/target/classes/com/epam/training/ticketservice/core/entity/ScreeningEntity$ScreeningEntityBuilder.class" beforeDir="false" afterPath="$PROJECT_DIR$/ticket-service/target/classes/com/epam/training/ticketservice/core/entity/ScreeningEntity$ScreeningEntityBuilder.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ticket-service/target/classes/com/epam/training/ticketservice/core/entity/UserEntity$Role.class" beforeDir="false" afterPath="$PROJECT_DIR$/ticket-service/target/classes/com/epam/training/ticketservice/core/entity/UserEntity$Role.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ticket-service/target/classes/com/epam/training/ticketservice/core/model/MovieDTO$Builder.class" beforeDir="false" afterPath="$PROJECT_DIR$/ticket-service/target/classes/com/epam/training/ticketservice/core/model/MovieDTO$Builder.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ticket-service/target/classes/com/epam/training/ticketservice/core/model/RoomDTO$RoomDTOBuilder.class" beforeDir="false" afterPath="$PROJECT_DIR$/ticket-service/target/classes/com/epam/training/ticketservice/core/model/RoomDTO$RoomDTOBuilder.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ticket-service/target/classes/com/epam/training/ticketservice/core/model/ScreeningDTO$ScreeningDTOBuilder.class" beforeDir="false" afterPath="$PROJECT_DIR$/ticket-service/target/classes/com/epam/training/ticketservice/core/model/ScreeningDTO$ScreeningDTOBuilder.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ticket-service/src/main/java/com/epam/training/ticketservice/core/model/ScreeningDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/ticket-service/src/main/java/com/epam/training/ticketservice/core/model/ScreeningDTO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ticket-service/src/main/java/com/epam/training/ticketservice/core/repository/MovieRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/ticket-service/src/main/java/com/epam/training/ticketservice/core/repository/MovieRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ticket-service/src/main/java/com/epam/training/ticketservice/core/repository/RoomRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/ticket-service/src/main/java/com/epam/training/ticketservice/core/repository/RoomRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ticket-service/src/main/java/com/epam/training/ticketservice/core/repository/UserRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/ticket-service/src/main/java/com/epam/training/ticketservice/core/repository/UserRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ticket-service/src/main/java/com/epam/training/ticketservice/core/services/serviceimpl/MovieServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/ticket-service/src/main/java/com/epam/training/ticketservice/core/services/serviceimpl/MovieServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ticket-service/src/main/java/com/epam/training/ticketservice/core/services/serviceimpl/RoomServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/ticket-service/src/main/java/com/epam/training/ticketservice/core/services/serviceimpl/RoomServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ticket-service/src/main/java/com/epam/training/ticketservice/core/services/serviceimpl/ScreeningServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/ticket-service/src/main/java/com/epam/training/ticketservice/core/services/serviceimpl/ScreeningServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ticket-service/src/main/java/com/epam/training/ticketservice/core/services/serviceimpl/UserServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/ticket-service/src/main/java/com/epam/training/ticketservice/core/services/serviceimpl/UserServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ticket-service/src/main/java/com/epam/training/ticketservice/ui/commands/MovieCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/ticket-service/src/main/java/com/epam/training/ticketservice/ui/commands/MovieCommand.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ticket-service/src/main/java/com/epam/training/ticketservice/ui/commands/RoomCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/ticket-service/src/main/java/com/epam/training/ticketservice/ui/commands/RoomCommand.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ticket-service/src/main/java/com/epam/training/ticketservice/ui/commands/ScreeningCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/ticket-service/src/main/java/com/epam/training/ticketservice/ui/commands/ScreeningCommand.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ticket-service/src/main/java/com/epam/training/ticketservice/ui/commands/UserCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/ticket-service/src/main/java/com/epam/training/ticketservice/ui/commands/UserCommand.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ticket-service/src/main/java/com/epam/training/ticketservice/ui/configuration/PromptConfiguration.java" beforeDir="false" afterPath="$PROJECT_DIR$/ticket-service/src/main/java/com/epam/training/ticketservice/ui/configuration/PromptConfiguration.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ticket-service/target/classes/application.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ticket-service/target/classes/com/epam/training/ticketservice/Application.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ticket-service/target/classes/com/epam/training/ticketservice/core/ApplicationConfiguration.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ticket-service/target/classes/com/epam/training/ticketservice/core/InMemoryDatabaseInitializer.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ticket-service/target/classes/com/epam/training/ticketservice/core/dateFormatter/DateFormatter.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ticket-service/target/classes/com/epam/training/ticketservice/core/entity/MovieEntity.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ticket-service/target/classes/com/epam/training/ticketservice/core/entity/RoomEntity.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ticket-service/target/classes/com/epam/training/ticketservice/core/entity/ScreeningEntity$ScreeningEntityBuilder.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ticket-service/target/classes/com/epam/training/ticketservice/core/entity/ScreeningEntity.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ticket-service/target/classes/com/epam/training/ticketservice/core/entity/UserEntity$Role.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ticket-service/target/classes/com/epam/training/ticketservice/core/entity/UserEntity.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ticket-service/target/classes/com/epam/training/ticketservice/core/model/MovieDTO$Builder.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ticket-service/target/classes/com/epam/training/ticketservice/core/model/MovieDTO.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ticket-service/target/classes/com/epam/training/ticketservice/core/model/RoomDTO$RoomDTOBuilder.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ticket-service/target/classes/com/epam/training/ticketservice/core/model/RoomDTO.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ticket-service/target/classes/com/epam/training/ticketservice/core/model/ScreeningDTO$ScreeningDTOBuilder.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ticket-service/target/classes/com/epam/training/ticketservice/core/model/ScreeningDTO.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ticket-service/target/classes/com/epam/training/ticketservice/core/model/UserDTO.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ticket-service/target/classes/com/epam/training/ticketservice/core/repository/MovieRepository.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ticket-service/target/classes/com/epam/training/ticketservice/core/repository/RoomRepository.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ticket-service/target/classes/com/epam/training/ticketservice/core/repository/ScreeningRepository.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ticket-service/target/classes/com/epam/training/ticketservice/core/repository/UserRepository.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ticket-service/target/classes/com/epam/training/ticketservice/core/services/MovieService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ticket-service/target/classes/com/epam/training/ticketservice/core/services/RoomService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ticket-service/target/classes/com/epam/training/ticketservice/core/services/ScreeningService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ticket-service/target/classes/com/epam/training/ticketservice/core/services/UserService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ticket-service/target/classes/com/epam/training/ticketservice/core/services/serviceimpl/MovieServiceImpl.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ticket-service/target/classes/com/epam/training/ticketservice/core/services/serviceimpl/RoomServiceImpl.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ticket-service/target/classes/com/epam/training/ticketservice/core/services/serviceimpl/ScreeningServiceImpl.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ticket-service/target/classes/com/epam/training/ticketservice/core/services/serviceimpl/UserServiceImpl.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ticket-service/target/classes/com/epam/training/ticketservice/core/state/State.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ticket-service/target/classes/com/epam/training/ticketservice/ui/commands/MovieCommand.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ticket-service/target/classes/com/epam/training/ticketservice/ui/commands/RoomCommand.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ticket-service/target/classes/com/epam/training/ticketservice/ui/commands/ScreeningCommand.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ticket-service/target/classes/com/epam/training/ticketservice/ui/commands/UserCommand.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ticket-service/target/classes/com/epam/training/ticketservice/ui/configuration/PromptConfiguration.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/ticket-service/target/test-classes/com/epam/training/ticketservice/core/services/serviceimpl/MovieServiceImplTest.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/ticket-service/target/test-classes/com/epam/training/ticketservice/core/services/serviceimpl/RoomServiceImplTest.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/ticket-service/target/test-classes/com/epam/training/ticketservice/core/services/serviceimpl/ScreeningServiceImplTest.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/ticket-service/target/test-classes/com/epam/training/ticketservice/core/services/serviceimpl/UserServiceImplTest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ticket-service/ticket-service.iml" beforeDir="false" afterPath="$PROJECT_DIR$/ticket-service/ticket-service.iml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -71,13 +119,9 @@
   <component name="MavenImportPreferences">
     <option name="generalSettings">
       <MavenGeneralSettings>
+        <option name="mavenHome" value="C:/Program Files/Maven/apache-maven-3.8.1" />
         <option name="useMavenConfig" value="true" />
       </MavenGeneralSettings>
-    </option>
-    <option name="enabledProfiles">
-      <list>
-        <option value="requirements-grade3" />
-      </list>
     </option>
   </component>
   <component name="ProblemsViewState">
@@ -106,10 +150,10 @@
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
     &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
     &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
     &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
     &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.lookFeel&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;MavenSettings&quot;,
     &quot;spring.configuration.checksum&quot;: &quot;fbeb12f27724a51b4dce1148652e39e7&quot;,
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
@@ -122,7 +166,7 @@
       <recent name="com.epam.training.ticketservice.core.services.serviceimpl" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.RoomServiceImplTest">
+  <component name="RunManager" selected="JUnit.MovieServiceImplTest.testCreateMovieShouldReturnZeroWhenTheMovieWasNotUpdated">
     <configuration name="MovieServiceImplTest.testCreateMovieShouldReturnZeroWhenTheMovieWasNotUpdated" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="ticket-service" />
       <extension name="coverage">
@@ -234,6 +278,8 @@
       <workItem from="1669923845012" duration="2448000" />
       <workItem from="1670061500148" duration="33027000" />
       <workItem from="1670096783343" duration="9223000" />
+      <workItem from="1670111873803" duration="3805000" />
+      <workItem from="1670163597962" duration="5695000" />
     </task>
     <task id="LOCAL-00001" summary="Refactoring file structure again, removing unnecessary files and directories">
       <created>1669724428438</created>

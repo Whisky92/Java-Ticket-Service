@@ -365,3 +365,44 @@
 1670094101651:create screening Titanic Classroom "2012-04-12 11:50"
 1670094106180:create screening Titanic Classroom "2012-04-12 11:49"
 1670094380340:exit
+1670165853156:sign in privileged admin admin
+1670165859634:exit
+1670165880172:sign in privileged admin admin
+1670165891431:create movie Titanic comedy 120
+1670166050245:sign in privileged asd asd
+1670166054938:sign in privileged admin admin
+1670166067418:create movie Titanic comedy 120
+1670166074236:create room Classroom 12 12
+1670166094439:create screening Titanic classroom "2012-04-01 12:12"
+1670166113698:create screening Titanic Classroom "2012-04-01 12:12"
+1670166129607:create screening Titanic Classroom "2012-04-01 14:23"
+1670166141613:create screening Titanic Classroom "2012-04-01 12:24"
+1670166148316:create screening Titanic Classroom "2012-04-01 14:24"
+1670166157051:Ticket service>
+1670166169704:create screening Titanic Classroom "2012-04-01 10:24"
+1670166181455:create screening Titanic Classroom "2012-04-02 14:24"
+1670166196921:list screenings
+1670166264537:create movie Titanic comedy 120
+1670166271034:sign in privleged admin admin
+1670166284064:sign in privileged admin admin
+1670166307271:create movie Titanic comedy 130
+1670166324166:update movie Titanic comedy 120
+1670166331610:create room Classroom 12 12
+1670166357856:create screening "2012-01-02 12:00"
+1670166366514:create screening Titanic Classroom "2012-04-01 14:00"
+1670166374856:create screening Titanic Classroom "2012-04-01 16:00"
+1670166381421:create screening Titanic Classroom "2012-04-01 16:01"
+1670166388311:create screening Titanic Classroom "2012-04-01 16:11"
+1670167184035:sign in privileged admin admin
+1670167194874:create movie Titanic comedy 60
+1670167237501:create room Classroom 12 12
+1670167249540:create screening Titanic Classroom 60
+1670167265480:create screening Titanic Classroom "2012-04-01 12:00"
+1670167312127:create screening Titanic Classrroom "2012-04-01 13:00"
+1670167324132:create screening Titanic Classroom "2012-04-01 13:00"
+1670167328747:create screening Titanic Classroom "2012-04-01 13:01"
+1670167331502:create screening Titanic Classroom "2012-04-01 13:10"
+1670167334780:create screening Titanic Classroom "2012-04-01 13:11"
+1670167344420:create screening Titanic Classroom "2012-04-01 11:00"
+1670167350514:create screening Titanic Classroom "2012-04-01 10:50"
+1670167355680:create screening Titanic Classroom "2012-04-01 10:49"

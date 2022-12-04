@@ -17,41 +17,45 @@ import java.util.Optional;
 public class UserCommand {
     private final UserService userService;
 
-    @ShellMethod(key="sign in privileged",value="Admin login")
-    public String loginAsAdmin(String username, String password){
+    @ShellMethod(key = "sign in privileged",value = "Admin login")
+    public String loginAsAdmin(String username, String password) {
+
         State user = userService.loginAsAdmin(username, password);
-        if(user==State.CORRECT) {
+
+        if (user == State.CORRECT) {
             return "Signed in as " + userService.describe().get().getUsername();
-        }else if(user==State.LOGGED_IN){
+        } else if (user == State.LOGGED_IN) {
             return "You need to log out first";
         }
         return "Login failed due to incorrect credentials";
     }
 
     @ShellMethodAvailability("isAdminAndLoggedIn")
-    @ShellMethod(key="sign out",value="Admin sign out")
-    public String logoutAsAdmin(){
+    @ShellMethod(key = "sign out",value = "Admin sign out")
+    public String logoutAsAdmin() {
+
         State user = userService.logout();
-        if(user==State.CORRECT){
+
+        if (user == State.CORRECT) {
             return "You have singed out";
-        }else if(user==State.WRONG){
+        } else if (user == State.WRONG) {
             return "Only admins can use this command";
         }
         return "You are not logged in";
     }
 
-    @ShellMethod(key="describe account", value="Admin describe account")
-    public String describe(){
-        Optional<UserDTO> user= userService.describe();
-        if(user.isEmpty()){
+    @ShellMethod(key = "describe account", value = "Admin describe account")
+    public String describe() {
+        Optional<UserDTO> user = userService.describe();
+        if (user.isEmpty()) {
             return "You are not signed in";
         }
-        return "Signed in with privileged account "+user.get().getUsername();
+        return "Signed in with privileged account '"+user.get().getUsername()+"'";
     }
 
 
     private Availability isAdminAndLoggedIn() {
-        return userService.describe().isPresent() && userService.describe().get().getRole()== UserEntity.Role.ADMIN
+        return userService.describe().isPresent() && userService.describe().get().getRole() == UserEntity.Role.ADMIN
                 ? Availability.available()
                 : Availability.unavailable("You are not logged in as an admin!");
     }

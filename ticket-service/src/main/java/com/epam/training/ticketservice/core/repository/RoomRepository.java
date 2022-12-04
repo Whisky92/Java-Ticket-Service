@@ -16,7 +16,7 @@ public interface RoomRepository extends JpaRepository<RoomEntity, String> {
 
     @Transactional
     @Modifying
-    @Query("UPDATE RoomEntity re SET re.rowCount=:rowCount, re.columnCount=:columnCount WHERE re.name=:name")
+    @Query("UPDATE RoomEntity re SET re.rowCount =: rowCount, re.columnCount =: columnCount WHERE re.name =: name")
     int updateRoom(String name, int rowCount, int columnCount);
 
     @Transactional

@@ -38,14 +38,14 @@ public class ScreeningServiceImpl implements ScreeningService {
 
     @Override
     public String createScreening(String movieTitle, String roomName, String startTime) {
-        MovieEntity movie = movieRepository.findByTitle(movieTitle).orElseThrow ( () -> new IllegalArgumentException("No such movie with this title"));
-        RoomEntity room = roomRepository.findByName(roomName).orElseThrow ( () -> new IllegalArgumentException("No such room with that name"));
-        Date date = (dateFormatter.formatDate(startTime).orElseThrow(() -> new IllegalArgumentException("Invalid date")));
+        MovieEntity movie = movieRepository.findByTitle(movieTitle).orElseThrow ( () -> new IllegalArgumentException("No such movie with this title") );
+        RoomEntity room = roomRepository.findByName(roomName).orElseThrow ( () -> new IllegalArgumentException("No such room with that name") );
+        Date date = (dateFormatter.formatStringToDate(startTime).orElseThrow( () -> new IllegalArgumentException("Invalid date") ));
         String result = isRoomAndTimeWrong(date, movie.getLength(), room.getName());
         if (!result.equals("")) {
             return result;
         }
-        ScreeningEntity screeningEntity=createEntity(movie, room, date);
+        ScreeningEntity screeningEntity = createEntity(movie, room, date);
         screeningRepository.save(screeningEntity);
         return "Screening successfully created";
     }
@@ -57,9 +57,9 @@ public class ScreeningServiceImpl implements ScreeningService {
     }
     @Override
     public int deleteScreening(String movieTitle, String roomName, String startTime) {
-        MovieEntity movie = movieRepository.findByTitle(movieTitle).orElseThrow(() -> new IllegalArgumentException("No such movie with that title"));
-        RoomEntity room = roomRepository.findByName(roomName).orElseThrow(() -> new IllegalArgumentException("No such room with that name"));
-        Date date = dateFormatter.formatDate(startTime).orElseThrow(() -> new IllegalArgumentException("Invalid date"));
+        MovieEntity movie = movieRepository.findByTitle(movieTitle).orElseThrow( () -> new IllegalArgumentException("No such movie with that title") );
+        RoomEntity room = roomRepository.findByName(roomName).orElseThrow( () -> new IllegalArgumentException("No such room with that name") );
+        Date date = dateFormatter.formatStringToDate(startTime).orElseThrow( () -> new IllegalArgumentException("Invalid date") );
         return screeningRepository.deleteByMovieAndRoomAndTime(movie, room, date);
 
     }
@@ -75,7 +75,7 @@ public class ScreeningServiceImpl implements ScreeningService {
         return ScreeningDTO.builder()
                 .withMovie(movieService.convertEntityToDTO(screeningEntity.getMovie()))
                 .withRoom(roomService.convertEntityToDTO(screeningEntity.getRoom()))
-                .withTime(screeningEntity.getTime())
+                .withTime(dateFormatter.formatDateToString(screeningEntity.getTime()))
                 .build();
     }
 
@@ -87,11 +87,11 @@ public class ScreeningServiceImpl implements ScreeningService {
             int currentLength = screening.getMovie().getLength();
             Date currentEnd = getTime(currentStart, currentLength);
             String currentName = screening.getRoom().getName();
-            if (isOverLapping(startTime, getTime(startTime, length), currentStart, currentEnd)
+            if (isOverLapping(startTime, endTime, currentStart, currentEnd)
                     && room.equals(currentName)) {
                 return "There is an overlapping screening";
-            } else if (isDuringMovieBreak(startTime, currentEnd, endTime)
-                    || isDuringMovieBreak(endTime,getTime(currentStart,-10) ,currentStart)) {
+            } else if ((isDuringMovieBreak(endTime, getTime(currentStart,-10), currentStart)
+                    || isDuringMovieBreak(startTime, currentEnd,getTime(currentEnd,10))) && room.equals(currentName)) {
                 return "This would start in the break period after another screening in this room";
             }
         }
@@ -104,7 +104,7 @@ public class ScreeningServiceImpl implements ScreeningService {
     }
 
     private boolean isDuringMovieBreak(Date startOrEndOfMovie, Date startOfBreak, Date endOfBreak) {
-        if (startOrEndOfMovie.compareTo(startOfBreak) != -1 && startOrEndOfMovie.compareTo(endOfBreak) != 1){
+        if (startOrEndOfMovie.compareTo(startOfBreak) != -1 && startOrEndOfMovie.compareTo(endOfBreak) != 1) {
             return true;
         }
         return false;

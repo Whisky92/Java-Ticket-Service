@@ -20,11 +20,11 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public State loginAsAdmin(String username, String password) {
-        if(describe().isPresent()) {
+        if (describe().isPresent()) {
             return State.LOGGED_IN;
         }
         Optional<UserDTO> user = login(username, password);
-        if(user.isEmpty()) {
+        if (user.isEmpty()) {
             return State.NOT_FOUND;
         }
         loggedInUser = user.get();
@@ -33,7 +33,7 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public State logout() {
-        if(describe().isEmpty()) {
+        if (describe().isEmpty()) {
             return State.LOGGED_IN;
         }
         loggedInUser = null;
@@ -44,10 +44,10 @@ public class UserServiceImpl implements UserService {
 
     private Optional<UserDTO> login(String username, String password) {
         Optional<UserEntity> user = userRepository.findByUsernameAndPassword(username, password);
-        if(user.isEmpty()) {
+        if (user.isEmpty()) {
             return Optional.empty();
         } else {
-            return Optional.of(new UserDTO(user.get().getUsername(),user.get().getRole()));
+            return Optional.of( new UserDTO(user.get().getUsername(),user.get().getRole()) );
         }
     }
 
