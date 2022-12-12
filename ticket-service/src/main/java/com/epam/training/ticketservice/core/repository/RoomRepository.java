@@ -14,9 +14,11 @@ import java.util.Optional;
 public interface RoomRepository extends JpaRepository<RoomEntity, String> {
 
     Optional<RoomEntity> findByName(String name);
+
     @Modifying(clearAutomatically = true)
     @Transactional
-    @Query(value = "UPDATE RoomEntity re SET re.rowCount = :rowCount, re.columnCount = :columnCount WHERE re.name = :name")
+    @Query(value = "UPDATE RoomEntity re "
+           + "SET re.rowCount = :rowCount, re.columnCount = :columnCount WHERE re.name = :name")
     int updateRoom(@Param("name") String name, @Param("rowCount") int rowCount, @Param("columnCount") int columnCount);
 
     @Transactional

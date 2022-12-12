@@ -1,12 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="hu"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>UserServiceImpl.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">ticket-service</a> &gt; <a href="index.source.html" class="el_package">com.epam.training.ticketservice.core.services.serviceimpl</a> &gt; <span class="el_source">UserServiceImpl.java</span></div><h1>UserServiceImpl.java</h1><pre class="source lang-java linenums">package com.epam.training.ticketservice.core.services.serviceimpl;
 
 import com.epam.training.ticketservice.core.entity.UserEntity;
-import com.epam.training.ticketservice.core.model.UserDTO;
+import com.epam.training.ticketservice.core.model.UserDto;
 import com.epam.training.ticketservice.core.repository.UserRepository;
 import com.epam.training.ticketservice.core.services.UserService;
 import com.epam.training.ticketservice.core.state.State;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
+
 import java.util.Optional;
 
 
@@ -16,43 +17,42 @@ public class UserServiceImpl implements UserService {
 
     private final UserRepository userRepository;
 
-    private UserDTO loggedInUser = null;
+    private UserDto loggedInUser = null;
 
     @Override
     public State loginAsAdmin(String username, String password) {
-<span class="fc bfc" id="L23" title="All 2 branches covered.">        if (describe().isPresent()) {</span>
-<span class="fc" id="L24">            return State.LOGGED_IN;</span>
+<span class="fc bfc" id="L24" title="All 2 branches covered.">        if (describe().isPresent()) {</span>
+<span class="fc" id="L25">            return State.LOGGED_IN;</span>
         }
-<span class="fc" id="L26">        Optional&lt;UserDTO&gt; user = login(username, password);</span>
-<span class="fc bfc" id="L27" title="All 2 branches covered.">        if (user.isEmpty()) {</span>
-<span class="fc" id="L28">            return State.NOT_FOUND;</span>
+<span class="fc" id="L27">        Optional&lt;UserDto&gt; user = login(username, password);</span>
+<span class="fc bfc" id="L28" title="All 2 branches covered.">        if (user.isEmpty()) {</span>
+<span class="fc" id="L29">            return State.NOT_FOUND;</span>
         }
-<span class="fc" id="L30">        loggedInUser = user.get();</span>
-<span class="fc" id="L31">        return State.CORRECT;</span>
+<span class="fc" id="L31">        loggedInUser = user.get();</span>
+<span class="fc" id="L32">        return State.CORRECT;</span>
     }
 
     @Override
     public State logout() {
-<span class="fc bfc" id="L36" title="All 2 branches covered.">        if (describe().isEmpty()) {</span>
-<span class="fc" id="L37">            return State.LOGGED_IN;</span>
+<span class="fc bfc" id="L37" title="All 2 branches covered.">        if (describe().isEmpty()) {</span>
+<span class="fc" id="L38">            return State.LOGGED_IN;</span>
         }
-<span class="fc" id="L39">        loggedInUser = null;</span>
-<span class="fc" id="L40">        return State.CORRECT;</span>
+<span class="fc" id="L40">        loggedInUser = null;</span>
+<span class="fc" id="L41">        return State.CORRECT;</span>
     }
 
 
-
-    private Optional&lt;UserDTO&gt; login(String username, String password) {
+    private Optional&lt;UserDto&gt; login(String username, String password) {
 <span class="fc" id="L46">        Optional&lt;UserEntity&gt; user = userRepository.findByUsernameAndPassword(username, password);</span>
 <span class="fc bfc" id="L47" title="All 2 branches covered.">        if (user.isEmpty()) {</span>
 <span class="fc" id="L48">            return Optional.empty();</span>
         } else {
-<span class="fc" id="L50">            return Optional.of( new UserDTO(user.get().getUsername(),user.get().getRole()) );</span>
+<span class="fc" id="L50">            return Optional.of(new UserDto(user.get().getUsername(), user.get().getRole()));</span>
         }
     }
 
     @Override
-    public Optional&lt;UserDTO&gt; describe(){
+    public Optional&lt;UserDto&gt; describe() {
 <span class="fc" id="L56">        return Optional.ofNullable(loggedInUser);</span>
     }
 }

@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="hu"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>DateFormatter.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">ticket-service</a> &gt; <a href="index.source.html" class="el_package">com.epam.training.ticketservice.core.dateformatter</a> &gt; <span class="el_source">DateFormatter.java</span></div><h1>DateFormatter.java</h1><pre class="source lang-java linenums">package com.epam.training.ticketservice.core.dateformatter;
+
+
+import lombok.AllArgsConstructor;
+import lombok.EqualsAndHashCode;
+
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+import java.util.Optional;
+
+@AllArgsConstructor
+@EqualsAndHashCode
+public class DateFormatter {
+
+    private final SimpleDateFormat format = new SimpleDateFormat(&quot;yyyy-MM-dd HH:mm&quot;);
+
+    public Optional&lt;Date&gt; formatStringToDate(String date) {
+        Date formattedDate;
+        try {
+<span class="nc" id="L21">            formattedDate = format.parse(date);</span>
+<span class="nc" id="L22">        } catch (ParseException e) {</span>
+<span class="nc" id="L23">            return Optional.empty();</span>
+<span class="nc" id="L24">        }</span>
+<span class="nc" id="L25">        return Optional.of(formattedDate);</span>
+    }
+
+    public String formatDateToString(Date date) {
+<span class="nc" id="L29">        return format.format(date);</span>
+    }
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.6.202009150832</span></div></body></html>

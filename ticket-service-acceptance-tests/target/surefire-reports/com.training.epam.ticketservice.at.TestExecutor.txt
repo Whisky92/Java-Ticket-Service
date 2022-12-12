@@ -1,4 +1,4 @@
 -------------------------------------------------------------------------------
 Test set: com.training.epam.ticketservice.at.TestExecutor
 -------------------------------------------------------------------------------
-Tests run: 17, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 108.517 sec
+Tests run: 17, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 107.922 sec

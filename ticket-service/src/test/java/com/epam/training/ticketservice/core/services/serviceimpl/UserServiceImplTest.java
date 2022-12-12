@@ -1,7 +1,7 @@
 package com.epam.training.ticketservice.core.services.serviceimpl;
 
 import com.epam.training.ticketservice.core.entity.UserEntity;
-import com.epam.training.ticketservice.core.model.UserDTO;
+import com.epam.training.ticketservice.core.model.UserDto;
 import com.epam.training.ticketservice.core.repository.UserRepository;
 import com.epam.training.ticketservice.core.state.State;
 import org.junit.jupiter.api.Assertions;
@@ -44,7 +44,7 @@ public class UserServiceImplTest {
         State expected = State.LOGGED_IN;
         Mockito.when(userRepository.findByUsernameAndPassword(TEST_ADMIN.getUsername(), TEST_ADMIN.getPassword()))
                 .thenReturn(Optional.of(TEST_ADMIN));
-        userService.loginAsAdmin(TEST_ADMIN.getUsername(),TEST_ADMIN.getPassword());
+        userService.loginAsAdmin(TEST_ADMIN.getUsername(), TEST_ADMIN.getPassword());
         //When
         State actual = userService.loginAsAdmin(TEST_ADMIN.getUsername(), TEST_ADMIN.getPassword());
         //Then
@@ -71,7 +71,7 @@ public class UserServiceImplTest {
         State expected = State.CORRECT;
         Mockito.when(userRepository.findByUsernameAndPassword(TEST_ADMIN.getUsername(), TEST_ADMIN.getPassword()))
                 .thenReturn(Optional.of(TEST_ADMIN));
-        userService.loginAsAdmin(TEST_ADMIN.getUsername(),TEST_ADMIN.getPassword());
+        userService.loginAsAdmin(TEST_ADMIN.getUsername(), TEST_ADMIN.getPassword());
         //When
         State actual = userService.logout();
         //Then
@@ -92,13 +92,13 @@ public class UserServiceImplTest {
     @Test
     void testDescribeShouldReturnCurrentOptionalUserWhenSignedInPrivileged() {
         // Given
-        Optional<UserDTO> expected = Optional.of(new UserDTO(TEST_ADMIN.getUsername(), TEST_ADMIN.getRole()));
+        Optional<UserDto> expected = Optional.of(new UserDto(TEST_ADMIN.getUsername(), TEST_ADMIN.getRole()));
         Mockito.when(userRepository.findByUsernameAndPassword(TEST_ADMIN.getUsername(), TEST_ADMIN.getPassword()))
                 .thenReturn(Optional.of(TEST_ADMIN));
         userService.loginAsAdmin(TEST_ADMIN.getUsername(), TEST_ADMIN.getPassword());
 
         // When
-        Optional<UserDTO> actual = userService.describe();
+        Optional<UserDto> actual = userService.describe();
 
         // Then
         Assertions.assertEquals(expected, actual);

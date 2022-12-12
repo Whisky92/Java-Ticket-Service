@@ -1,4 +1,4 @@
-package com.epam.training.ticketservice.core.dateFormatter;
+package com.epam.training.ticketservice.core.dateformatter;
 
 
 import lombok.AllArgsConstructor;
@@ -14,6 +14,7 @@ import java.util.Optional;
 public class DateFormatter {
 
     private final SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd HH:mm");
+
     public Optional<Date> formatStringToDate(String date) {
         Date formattedDate;
         try {

@@ -1,7 +1,7 @@
 package com.epam.training.ticketservice.ui.commands;
 
 import com.epam.training.ticketservice.core.entity.UserEntity;
-import com.epam.training.ticketservice.core.model.UserDTO;
+import com.epam.training.ticketservice.core.model.UserDto;
 import com.epam.training.ticketservice.core.services.UserService;
 import com.epam.training.ticketservice.core.state.State;
 import lombok.AllArgsConstructor;
@@ -17,7 +17,7 @@ import java.util.Optional;
 public class UserCommand {
     private final UserService userService;
 
-    @ShellMethod(key = "sign in privileged",value = "Admin login")
+    @ShellMethod(key = "sign in privileged", value = "Admin login")
     public String loginAsAdmin(String username, String password) {
 
         State user = userService.loginAsAdmin(username, password);
@@ -31,7 +31,7 @@ public class UserCommand {
     }
 
     @ShellMethodAvailability("isAdminAndLoggedIn")
-    @ShellMethod(key = "sign out",value = "Admin sign out")
+    @ShellMethod(key = "sign out", value = "Admin sign out")
     public String logoutAsAdmin() {
 
         State user = userService.logout();
@@ -46,11 +46,11 @@ public class UserCommand {
 
     @ShellMethod(key = "describe account", value = "Admin describe account")
     public String describe() {
-        Optional<UserDTO> user = userService.describe();
+        Optional<UserDto> user = userService.describe();
         if (user.isEmpty()) {
             return "You are not signed in";
         }
-        return "Signed in with privileged account '"+user.get().getUsername()+"'";
+        return "Signed in with privileged account '" + user.get().getUsername() + "'";
     }
 
 

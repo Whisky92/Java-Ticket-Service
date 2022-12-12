@@ -1,7 +1,7 @@
 package com.epam.training.ticketservice.core.services.serviceimpl;
 
 import com.epam.training.ticketservice.core.entity.RoomEntity;
-import com.epam.training.ticketservice.core.model.RoomDTO;
+import com.epam.training.ticketservice.core.model.RoomDto;
 import com.epam.training.ticketservice.core.repository.RoomRepository;
 import com.epam.training.ticketservice.core.services.RoomService;
 import lombok.RequiredArgsConstructor;
@@ -18,12 +18,12 @@ public class RoomServiceImpl implements RoomService {
     private final RoomRepository roomRepository;
 
     @Override
-    public Optional<RoomDTO> createRoom(String name, int rowCount, int columnCount) {
-        Optional<RoomDTO> roomDTO = convertEntityToDTO(roomRepository.findByName(name));
-        if (roomDTO.isEmpty()) {
+    public Optional<RoomDto> createRoom(String name, int rowCount, int columnCount) {
+        Optional<RoomDto> roomDto = convertEntityToDto(roomRepository.findByName(name));
+        if (roomDto.isEmpty()) {
             roomRepository.save(createEntity(name, rowCount, columnCount));
         }
-        return roomDTO;
+        return roomDto;
     }
 
     @Override
@@ -37,25 +37,24 @@ public class RoomServiceImpl implements RoomService {
     }
 
     @Override
-    public List<RoomDTO> getRoomList() {
-        return roomRepository.findAll().stream()
-                .map(this::convertEntityToDTO)
-                .collect(Collectors.toList());
+    public List<RoomDto> getRoomList() {
+        return roomRepository.findAll()
+                .stream()
+                .map(this::convertEntityToDto).collect(Collectors.toList());
     }
 
     private RoomEntity createEntity(String name, int rowCount, int columnCount) {
-        return new RoomEntity(name,rowCount,columnCount);
+        return new RoomEntity(name, rowCount, columnCount);
     }
 
-    public RoomDTO convertEntityToDTO(RoomEntity roomEntity) {
-        return RoomDTO.builder()
+    public RoomDto convertEntityToDto(RoomEntity roomEntity) {
+        return RoomDto.builder()
                 .withName(roomEntity.getName())
                 .withRowCount(roomEntity.getRowCount())
-                .withColumnCount(roomEntity.getColumnCount())
-                .build();
+                .withColumnCount(roomEntity.getColumnCount()).build();
     }
 
-    private Optional<RoomDTO> convertEntityToDTO(Optional<RoomEntity> roomEntity) {
-        return roomEntity.isEmpty() ? Optional.empty() : Optional.of(convertEntityToDTO(roomEntity.get()));
+    private Optional<RoomDto> convertEntityToDto(Optional<RoomEntity> roomEntity) {
+        return roomEntity.isEmpty() ? Optional.empty() : Optional.of(convertEntityToDto(roomEntity.get()));
     }
 }

@@ -1,6 +1,6 @@
 package com.epam.training.ticketservice.core.services;
 
-import com.epam.training.ticketservice.core.model.UserDTO;
+import com.epam.training.ticketservice.core.model.UserDto;
 import com.epam.training.ticketservice.core.state.State;
 
 import java.util.Optional;
@@ -12,5 +12,5 @@ public interface UserService {
 
     State logout();
 
-    Optional<UserDTO> describe();
+    Optional<UserDto> describe();
 }

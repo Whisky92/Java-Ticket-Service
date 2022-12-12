@@ -1,7 +1,7 @@
 package com.epam.training.ticketservice.ui.commands;
 
 import com.epam.training.ticketservice.core.entity.UserEntity;
-import com.epam.training.ticketservice.core.model.ScreeningDTO;
+import com.epam.training.ticketservice.core.model.ScreeningDto;
 import com.epam.training.ticketservice.core.services.ScreeningService;
 import com.epam.training.ticketservice.core.services.UserService;
 import lombok.AllArgsConstructor;
@@ -28,22 +28,23 @@ public class ScreeningCommand {
 
     @ShellMethod(key = "list screenings", value = "List screenings")
     public String getScreeningList() {
-        List<ScreeningDTO> screenings = screeningService.getScreeningList();
+        List<ScreeningDto> screenings = screeningService.getScreeningList();
         if (screenings.isEmpty()) {
             return "There are no screenings";
         }
         String response = "";
-        for (ScreeningDTO screeningDTO : screenings) {
-            response += screeningDTO.getMovie().getTitle() + " ("
-                    + screeningDTO.getMovie().getGenre() + ", "
-                    + screeningDTO.getMovie().getLength()
+        for (ScreeningDto screeningDto : screenings) {
+            response += screeningDto.getMovie().getTitle() + " ("
+                    + screeningDto.getMovie().getGenre() + ", "
+                    + screeningDto.getMovie().getLength()
                     + " minutes), screened in room "
-                    + screeningDTO.getRoom().getName() + ", at "
-                    + screeningDTO.getTime() + "\n";
+                    + screeningDto.getRoom().getName() + ", at "
+                    + screeningDto.getTime() + "\n";
         }
-        response = response.substring(0, response.length()-1);
+        response = response.substring(0, response.length() - 1);
         return response;
     }
+
     @ShellMethodAvailability("isAdminAndLoggedIn")
     @ShellMethod(key = "delete screening", value = "Delete a screening")
     public String deleteScreening(String movieTitle, String roomName, String startTime) {

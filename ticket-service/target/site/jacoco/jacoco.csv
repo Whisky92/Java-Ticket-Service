@@ -1,11 +1,12 @@
 GROUP,PACKAGE,CLASS,INSTRUCTION_MISSED,INSTRUCTION_COVERED,BRANCH_MISSED,BRANCH_COVERED,LINE_MISSED,LINE_COVERED,COMPLEXITY_MISSED,COMPLEXITY_COVERED,METHOD_MISSED,METHOD_COVERED
+ticket-service,com.epam.training.ticketservice.core.dateformatter,DateFormatter,17,0,0,0,6,0,2,0,2,0
 ticket-service,com.epam.training.ticketservice.core.services.serviceimpl,UserServiceImpl,0,62,0,8,0,16,0,8,0,4
-ticket-service,com.epam.training.ticketservice.core.services.serviceimpl,MovieServiceImpl,11,66,0,4,3,13,1,8,1,6
-ticket-service,com.epam.training.ticketservice.core.services.serviceimpl,ScreeningServiceImpl,279,0,22,0,50,0,26,0,15,0
-ticket-service,com.epam.training.ticketservice.core.services.serviceimpl,RoomServiceImpl,11,68,0,4,3,13,1,8,1,6
+ticket-service,com.epam.training.ticketservice.core.services.serviceimpl,MovieServiceImpl,11,66,0,4,3,12,1,8,1,6
+ticket-service,com.epam.training.ticketservice.core.services.serviceimpl,ScreeningServiceImpl,279,0,22,0,57,0,26,0,15,0
+ticket-service,com.epam.training.ticketservice.core.services.serviceimpl,RoomServiceImpl,11,68,0,4,3,12,1,8,1,6
 ticket-service,com.epam.training.ticketservice.core.state,State,0,44,0,0,0,5,0,1,0,1
-ticket-service,com.epam.training.ticketservice.core.model,MovieDTO,0,4,0,0,0,1,0,1,0,1
-ticket-service,com.epam.training.ticketservice.core.model,MovieDTO.Builder,0,30,0,0,0,8,0,5,0,5
+ticket-service,com.epam.training.ticketservice.core.model,MovieDto,0,4,0,0,0,1,0,1,0,1
+ticket-service,com.epam.training.ticketservice.core.model,MovieDto.Builder,0,30,0,0,0,8,0,5,0,5
 ticket-service,com.epam.training.ticketservice.core.entity,UserEntity,0,12,0,0,0,5,0,1,0,1
 ticket-service,com.epam.training.ticketservice.core.entity,UserEntity.Role,0,24,0,0,0,3,0,1,0,1
 ticket-service,com.epam.training.ticketservice.core,ApplicationConfiguration,7,0,0,0,2,0,2,0,2,0

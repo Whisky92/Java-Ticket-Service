@@ -3,15 +3,13 @@ package com.epam.training.ticketservice.core.model;
 import lombok.Builder;
 import lombok.Value;
 
-import java.util.Date;
-
 @Builder(setterPrefix = "with")
 @Value
-public class ScreeningDTO {
+public class ScreeningDto {
 
-    private final MovieDTO movie;
+    private final MovieDto movie;
 
-    private final RoomDTO room;
+    private final RoomDto room;
 
     private final String time;
 

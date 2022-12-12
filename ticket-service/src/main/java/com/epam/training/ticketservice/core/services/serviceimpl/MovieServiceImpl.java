@@ -1,7 +1,7 @@
 package com.epam.training.ticketservice.core.services.serviceimpl;
 
 import com.epam.training.ticketservice.core.entity.MovieEntity;
-import com.epam.training.ticketservice.core.model.MovieDTO;
+import com.epam.training.ticketservice.core.model.MovieDto;
 import com.epam.training.ticketservice.core.repository.MovieRepository;
 import com.epam.training.ticketservice.core.services.MovieService;
 import lombok.RequiredArgsConstructor;
@@ -18,12 +18,12 @@ public class MovieServiceImpl implements MovieService {
     private final MovieRepository movieRepository;
 
     @Override
-    public Optional<MovieDTO> createMovie(String title, String genre, int length) {
-        Optional<MovieDTO> movieDTO = convertEntityToDTO(movieRepository.findByTitle(title));
-        if (movieDTO.isEmpty()) {
+    public Optional<MovieDto> createMovie(String title, String genre, int length) {
+        Optional<MovieDto> movieDto = convertEntityToDto(movieRepository.findByTitle(title));
+        if (movieDto.isEmpty()) {
             movieRepository.save(createEntity(title, genre, length));
         }
-        return movieDTO;
+        return movieDto;
     }
 
     @Override
@@ -37,28 +37,26 @@ public class MovieServiceImpl implements MovieService {
     }
 
     @Override
-    public List<MovieDTO> getMovieList() {
-        return movieRepository.findAll().stream()
-           .map(this::convertEntityToDTO)
-                .collect(Collectors.toList());
+    public List<MovieDto> getMovieList() {
+        return movieRepository.findAll()
+                .stream()
+                .map(this::convertEntityToDto).collect(Collectors.toList());
     }
 
     private MovieEntity createEntity(String title, String genre, int length) {
-        return new MovieEntity(title,genre,length);
+        return new MovieEntity(title, genre, length);
     }
 
-    public MovieDTO convertEntityToDTO(MovieEntity movieEntity) {
-        return MovieDTO.builder()
+    public MovieDto convertEntityToDto(MovieEntity movieEntity) {
+        return MovieDto.builder()
                 .withTitle(movieEntity.getTitle())
                 .withGenre(movieEntity.getGenre())
-                .withLength(movieEntity.getLength())
-                .build();
+                .withLength(movieEntity.getLength()).build();
     }
 
-    private Optional<MovieDTO> convertEntityToDTO(Optional<MovieEntity> movieEntity) {
-        return movieEntity.isEmpty() ? Optional.empty() : Optional.of(convertEntityToDTO(movieEntity.get()));
+    private Optional<MovieDto> convertEntityToDto(Optional<MovieEntity> movieEntity) {
+        return movieEntity.isEmpty() ? Optional.empty() : Optional.of(convertEntityToDto(movieEntity.get()));
     }
-
 
 
 }

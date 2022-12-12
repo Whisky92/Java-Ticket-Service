@@ -14,8 +14,8 @@ public class InMemoryDatabaseInitializer {
     private final UserRepository userRepository;
 
     @PostConstruct
-    public void init(){
-<span class="nc" id="L18">        UserEntity admin = new UserEntity(&quot;admin&quot;,&quot;admin&quot;,UserEntity.Role.ADMIN);</span>
+    public void init() {
+<span class="nc" id="L18">        UserEntity admin = new UserEntity(&quot;admin&quot;, &quot;admin&quot;, UserEntity.Role.ADMIN);</span>
 <span class="nc" id="L19">        userRepository.save(admin);</span>
 <span class="nc" id="L20">    }</span>
 
