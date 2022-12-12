@@ -430,3 +430,13 @@
 1670852852626:create movie SpiderMan action 120
 1670852862641:update movie SpiderMan action 120
 1670852879732:stacktrace
+1670853320440:sign in privleged admin admin
+1670853329605:sign in privileged admin admin
+1670853341236:create room Pedersoli 10 10
+1670853346179:create movie SpiderMan action 120
+1670853355324:update room Pedersoli 20 10
+1670853358769:list rooms
+1670853374568:update movie SpiderMan comedy 200
+1670853608058:sign in privileged admin admin
+1670853624587:create movie SpiderMan action 120
+1670853632645:update movie SpiderMan comedy 200

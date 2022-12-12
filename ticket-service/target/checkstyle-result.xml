@@ -49,6 +49,8 @@
 <file name="C:\Users\Tomi\IdeaProjects\Java-Ticket-Service\ticket-service\src\main\java\com\epam\training\ticketservice\core\repository\MovieRepository.java">
 </file>
 <file name="C:\Users\Tomi\IdeaProjects\Java-Ticket-Service\ticket-service\src\main\java\com\epam\training\ticketservice\core\repository\RoomRepository.java">
+<error line="17" severity="warning" message="&apos;METHOD_DEF&apos; should be separated from previous statement." source="com.puppycrawl.tools.checkstyle.checks.whitespace.EmptyLineSeparatorCheck"/>
+<error line="19" severity="warning" message="Line is longer than 120 characters (found 123)." source="com.puppycrawl.tools.checkstyle.checks.sizes.LineLengthCheck"/>
 </file>
 <file name="C:\Users\Tomi\IdeaProjects\Java-Ticket-Service\ticket-service\src\main\java\com\epam\training\ticketservice\core\repository\ScreeningRepository.java">
 </file>

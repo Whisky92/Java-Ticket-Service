@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<testsuite tests="17" failures="2" name="com.training.epam.ticketservice.at.TestExecutor" time="110.954" errors="0" skipped="0">
+<testsuite tests="17" failures="0" name="com.training.epam.ticketservice.at.TestExecutor" time="108.098" errors="0" skipped="0">
   <properties>
     <property name="java.runtime.name" value="OpenJDK Runtime Environment"/>
     <property name="java.vm.version" value="11.0.17+8-LTS"/>
@@ -65,43 +65,21 @@
     <property name="sun.desktop" value="windows"/>
     <property name="sun.cpu.isalist" value="amd64"/>
   </properties>
-  <testcase classname="allow creating accounts and logging in" name="the admin account exists by default and can be logged in with the correct password" time="5.331"/>
-  <testcase classname="allow creating accounts and logging in" name="the admin account can be signed out" time="5.452"/>
-  <testcase classname="allow creating accounts and logging in" name="the admin account can not be logged in with incorrect password" time="6.162"/>
-  <testcase classname="allows creating movie descriptions" name="an admin user can create and list movies" time="6.016"/>
-  <testcase classname="allows creating movie descriptions" name="an admin user can update a movie" time="6.314">
-    <failure message="
-Expected: &quot;Sátántangó (drama, 450 minutes)&quot;
-     but: was &quot;Sátántangó (dram, 450 minutes)&quot;" type="java.lang.AssertionError">java.lang.AssertionError: 
-Expected: &quot;Sátántangó (drama, 450 minutes)&quot;
-     but: was &quot;Sátántangó (dram, 450 minutes)&quot;
-	at org.hamcrest.MatcherAssert.assertThat(MatcherAssert.java:20)
-	at org.hamcrest.MatcherAssert.assertThat(MatcherAssert.java:6)
-	at com.training.epam.ticketservice.at.GenericCliProcessStepDefs.theNextLineOfOutputContains(GenericCliProcessStepDefs.java:43)
-	at ✽.the next line of the output is &quot;Sátántangó (drama, 450 minutes)&quot;(file:///C:/Users/Tomi/IdeaProjects/Java-Ticket-Service/ticket-service-acceptance-tests/src/test/resources/features/movies.feature:19)
-</failure>
-  </testcase>
-  <testcase classname="allows creating movie descriptions" name="an admin user can delete a movie" time="5.809"/>
-  <testcase classname="allows creating movie descriptions" name="an unauthenticated user can list movies" time="5.996"/>
-  <testcase classname="allow creating, reading, updating and deleting rooms where the screenings will happen" name="an admin user can create and list rooms" time="5.595"/>
-  <testcase classname="allow creating, reading, updating and deleting rooms where the screenings will happen" name="an admin user can update a room" time="5.981">
-    <failure message="
-Expected: &quot;Room Pedersoli with 100 seats, 10 rows and 10 columns&quot;
-     but: was &quot;Room Pedersoli with 200 seats, 20 rows and 10 columns&quot;" type="java.lang.AssertionError">java.lang.AssertionError: 
-Expected: &quot;Room Pedersoli with 100 seats, 10 rows and 10 columns&quot;
-     but: was &quot;Room Pedersoli with 200 seats, 20 rows and 10 columns&quot;
-	at org.hamcrest.MatcherAssert.assertThat(MatcherAssert.java:20)
-	at org.hamcrest.MatcherAssert.assertThat(MatcherAssert.java:6)
-	at com.training.epam.ticketservice.at.GenericCliProcessStepDefs.theNextLineOfOutputContains(GenericCliProcessStepDefs.java:43)
-	at ✽.the next line of the output is &quot;Room Pedersoli with 100 seats, 10 rows and 10 columns&quot;(file:///C:/Users/Tomi/IdeaProjects/Java-Ticket-Service/ticket-service-acceptance-tests/src/test/resources/features/rooms.feature:20)
-</failure>
-  </testcase>
-  <testcase classname="allow creating, reading, updating and deleting rooms where the screenings will happen" name="an admin user can delete a room" time="6.242"/>
-  <testcase classname="allow creating, reading, updating and deleting rooms where the screenings will happen" name="an unauthenticated user can list rooms" time="6.203"/>
-  <testcase classname="allows creating, deleting and listing screenings" name="The admin user can create and query screenings" time="7.598"/>
-  <testcase classname="allows creating, deleting and listing screenings" name="The admin can not create overlapping screenings in the same room" time="7.546"/>
-  <testcase classname="allows creating, deleting and listing screenings" name="The admin can create overlapping screenings in different rooms" time="7.866"/>
-  <testcase classname="allows creating, deleting and listing screenings" name="The admin can not create screenings during a 10 minute long breaks after another screening in the same room" time="7.314"/>
-  <testcase classname="allows creating, deleting and listing screenings" name="The admin can create screenings even if there is a break after a screening in a different room" time="7.914"/>
-  <testcase classname="allows creating, deleting and listing screenings" name="The admin user can delete screenings" time="7.615"/>
+  <testcase classname="allow creating accounts and logging in" name="the admin account exists by default and can be logged in with the correct password" time="5.23"/>
+  <testcase classname="allow creating accounts and logging in" name="the admin account can be signed out" time="5.45"/>
+  <testcase classname="allow creating accounts and logging in" name="the admin account can not be logged in with incorrect password" time="5.336"/>
+  <testcase classname="allows creating movie descriptions" name="an admin user can create and list movies" time="6.188"/>
+  <testcase classname="allows creating movie descriptions" name="an admin user can update a movie" time="5.991"/>
+  <testcase classname="allows creating movie descriptions" name="an admin user can delete a movie" time="5.927"/>
+  <testcase classname="allows creating movie descriptions" name="an unauthenticated user can list movies" time="5.783"/>
+  <testcase classname="allow creating, reading, updating and deleting rooms where the screenings will happen" name="an admin user can create and list rooms" time="5.574"/>
+  <testcase classname="allow creating, reading, updating and deleting rooms where the screenings will happen" name="an admin user can update a room" time="5.776"/>
+  <testcase classname="allow creating, reading, updating and deleting rooms where the screenings will happen" name="an admin user can delete a room" time="5.632"/>
+  <testcase classname="allow creating, reading, updating and deleting rooms where the screenings will happen" name="an unauthenticated user can list rooms" time="5.55"/>
+  <testcase classname="allows creating, deleting and listing screenings" name="The admin user can create and query screenings" time="7.119"/>
+  <testcase classname="allows creating, deleting and listing screenings" name="The admin can not create overlapping screenings in the same room" time="7.508"/>
+  <testcase classname="allows creating, deleting and listing screenings" name="The admin can create overlapping screenings in different rooms" time="7.784"/>
+  <testcase classname="allows creating, deleting and listing screenings" name="The admin can not create screenings during a 10 minute long breaks after another screening in the same room" time="7.498"/>
+  <testcase classname="allows creating, deleting and listing screenings" name="The admin can create screenings even if there is a break after a screening in a different room" time="7.482"/>
+  <testcase classname="allows creating, deleting and listing screenings" name="The admin user can delete screenings" time="8.27"/>
 </testsuite>
