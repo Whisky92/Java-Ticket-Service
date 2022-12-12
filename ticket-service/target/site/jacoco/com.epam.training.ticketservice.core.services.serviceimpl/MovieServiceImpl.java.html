@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="hu"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>MovieServiceImpl.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">ticket-service</a> &gt; <a href="index.source.html" class="el_package">com.epam.training.ticketservice.core.services.serviceimpl</a> &gt; <span class="el_source">MovieServiceImpl.java</span></div><h1>MovieServiceImpl.java</h1><pre class="source lang-java linenums">package com.epam.training.ticketservice.core.services.serviceimpl;
+
+import com.epam.training.ticketservice.core.entity.MovieEntity;
+import com.epam.training.ticketservice.core.model.MovieDTO;
+import com.epam.training.ticketservice.core.repository.MovieRepository;
+import com.epam.training.ticketservice.core.services.MovieService;
+import lombok.RequiredArgsConstructor;
+import org.springframework.stereotype.Service;
+
+import java.util.List;
+import java.util.Optional;
+import java.util.stream.Collectors;
+
+@Service
+@RequiredArgsConstructor
+public class MovieServiceImpl implements MovieService {
+
+    private final MovieRepository movieRepository;
+
+    @Override
+    public Optional&lt;MovieDTO&gt; createMovie(String title, String genre, int length) {
+<span class="fc" id="L22">        Optional&lt;MovieDTO&gt; movieDTO = convertEntityToDTO(movieRepository.findByTitle(title));</span>
+<span class="fc bfc" id="L23" title="All 2 branches covered.">        if (movieDTO.isEmpty()) {</span>
+<span class="fc" id="L24">            movieRepository.save(createEntity(title, genre, length));</span>
+        }
+<span class="fc" id="L26">        return movieDTO;</span>
+    }
+
+    @Override
+    public int updateMovie(String title, String genre, int length) {
+<span class="fc" id="L31">        return movieRepository.updateMovie(title, genre, length);</span>
+    }
+
+    @Override
+    public int deleteMovie(String title) {
+<span class="fc" id="L36">        return movieRepository.deleteByTitle(title);</span>
+    }
+
+    @Override
+    public List&lt;MovieDTO&gt; getMovieList() {
+<span class="nc" id="L41">        return movieRepository.findAll().stream()</span>
+<span class="nc" id="L42">           .map(this::convertEntityToDTO)</span>
+<span class="nc" id="L43">                .collect(Collectors.toList());</span>
+    }
+
+    private MovieEntity createEntity(String title, String genre, int length) {
+<span class="fc" id="L47">        return new MovieEntity(title,genre,length);</span>
+    }
+
+    public MovieDTO convertEntityToDTO(MovieEntity movieEntity) {
+<span class="fc" id="L51">        return MovieDTO.builder()</span>
+<span class="fc" id="L52">                .withTitle(movieEntity.getTitle())</span>
+<span class="fc" id="L53">                .withGenre(movieEntity.getGenre())</span>
+<span class="fc" id="L54">                .withLength(movieEntity.getLength())</span>
+<span class="fc" id="L55">                .build();</span>
+    }
+
+    private Optional&lt;MovieDTO&gt; convertEntityToDTO(Optional&lt;MovieEntity&gt; movieEntity) {
+<span class="fc bfc" id="L59" title="All 2 branches covered.">        return movieEntity.isEmpty() ? Optional.empty() : Optional.of(convertEntityToDTO(movieEntity.get()));</span>
+    }
+
+
+
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.6.202009150832</span></div></body></html>

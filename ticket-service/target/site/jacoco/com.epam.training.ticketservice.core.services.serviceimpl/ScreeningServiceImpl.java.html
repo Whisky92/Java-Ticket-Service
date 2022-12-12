@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="hu"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>ScreeningServiceImpl.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">ticket-service</a> &gt; <a href="index.source.html" class="el_package">com.epam.training.ticketservice.core.services.serviceimpl</a> &gt; <span class="el_source">ScreeningServiceImpl.java</span></div><h1>ScreeningServiceImpl.java</h1><pre class="source lang-java linenums">package com.epam.training.ticketservice.core.services.serviceimpl;
+
+import com.epam.training.ticketservice.core.dateFormatter.DateFormatter;
+import com.epam.training.ticketservice.core.entity.MovieEntity;
+import com.epam.training.ticketservice.core.entity.RoomEntity;
+import com.epam.training.ticketservice.core.entity.ScreeningEntity;
+import com.epam.training.ticketservice.core.model.ScreeningDTO;
+import com.epam.training.ticketservice.core.repository.MovieRepository;
+import com.epam.training.ticketservice.core.repository.RoomRepository;
+import com.epam.training.ticketservice.core.repository.ScreeningRepository;
+import com.epam.training.ticketservice.core.services.MovieService;
+import com.epam.training.ticketservice.core.services.RoomService;
+import com.epam.training.ticketservice.core.services.ScreeningService;
+import lombok.RequiredArgsConstructor;
+import org.springframework.stereotype.Service;
+
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
+import java.util.Date;
+import java.util.List;
+import java.util.stream.Collectors;
+
+@Service
+@RequiredArgsConstructor
+public class ScreeningServiceImpl implements ScreeningService {
+
+    private final ScreeningRepository screeningRepository;
+
+    private final MovieRepository movieRepository;
+
+    private final MovieService movieService;
+
+    private final RoomRepository roomRepository;
+
+    private final RoomService roomService;
+
+    private final DateFormatter dateFormatter;
+
+    @Override
+    public String createScreening(String movieTitle, String roomName, String startTime) {
+<span class="nc" id="L41">        MovieEntity movie = movieRepository.findByTitle(movieTitle).orElseThrow ( () -&gt; new IllegalArgumentException(&quot;No such movie with this title&quot;) );</span>
+<span class="nc" id="L42">        RoomEntity room = roomRepository.findByName(roomName).orElseThrow ( () -&gt; new IllegalArgumentException(&quot;No such room with that name&quot;) );</span>
+<span class="nc" id="L43">        Date date = (dateFormatter.formatStringToDate(startTime).orElseThrow( () -&gt; new IllegalArgumentException(&quot;Invalid date&quot;) ));</span>
+<span class="nc" id="L44">        String result = isRoomAndTimeWrong(date, movie.getLength(), room.getName());</span>
+<span class="nc bnc" id="L45" title="All 2 branches missed.">        if (!result.equals(&quot;&quot;)) {</span>
+<span class="nc" id="L46">            return result;</span>
+        }
+<span class="nc" id="L48">        ScreeningEntity screeningEntity = createEntity(movie, room, date);</span>
+<span class="nc" id="L49">        screeningRepository.save(screeningEntity);</span>
+<span class="nc" id="L50">        return &quot;Screening successfully created&quot;;</span>
+    }
+    @Override
+    public List&lt;ScreeningDTO&gt; getScreeningList() {
+<span class="nc" id="L54">        return screeningRepository.findAll().stream()</span>
+<span class="nc" id="L55">                .map(this::convertEntityToDTO)</span>
+<span class="nc" id="L56">                .collect(Collectors.toList());</span>
+    }
+    @Override
+    public int deleteScreening(String movieTitle, String roomName, String startTime) {
+<span class="nc" id="L60">        MovieEntity movie = movieRepository.findByTitle(movieTitle).orElseThrow( () -&gt; new IllegalArgumentException(&quot;No such movie with that title&quot;) );</span>
+<span class="nc" id="L61">        RoomEntity room = roomRepository.findByName(roomName).orElseThrow( () -&gt; new IllegalArgumentException(&quot;No such room with that name&quot;) );</span>
+<span class="nc" id="L62">        Date date = dateFormatter.formatStringToDate(startTime).orElseThrow( () -&gt; new IllegalArgumentException(&quot;Invalid date&quot;) );</span>
+<span class="nc" id="L63">        return screeningRepository.deleteByMovieAndRoomAndTime(movie, room, date);</span>
+
+    }
+
+    private ScreeningEntity createEntity(MovieEntity movie, RoomEntity room, Date startTime) {
+<span class="nc" id="L68">        return ScreeningEntity.builder()</span>
+<span class="nc" id="L69">                .withMovie(movie)</span>
+<span class="nc" id="L70">                .withRoom(room)</span>
+<span class="nc" id="L71">                .withTime(startTime)</span>
+<span class="nc" id="L72">                .build();</span>
+    }
+    private ScreeningDTO convertEntityToDTO(ScreeningEntity screeningEntity) {
+<span class="nc" id="L75">        return ScreeningDTO.builder()</span>
+<span class="nc" id="L76">                .withMovie(movieService.convertEntityToDTO(screeningEntity.getMovie()))</span>
+<span class="nc" id="L77">                .withRoom(roomService.convertEntityToDTO(screeningEntity.getRoom()))</span>
+<span class="nc" id="L78">                .withTime(dateFormatter.formatDateToString(screeningEntity.getTime()))</span>
+<span class="nc" id="L79">                .build();</span>
+    }
+
+    private String isRoomAndTimeWrong(Date startTime, int length, String room) {
+<span class="nc" id="L83">        List&lt;ScreeningEntity&gt; screenings = screeningRepository.findAll();</span>
+<span class="nc" id="L84">        Date endTime = getTime(startTime, length);</span>
+<span class="nc bnc" id="L85" title="All 2 branches missed.">        for (ScreeningEntity screening : screenings) {</span>
+<span class="nc" id="L86">            Date currentStart = screening.getTime();</span>
+<span class="nc" id="L87">            int currentLength = screening.getMovie().getLength();</span>
+<span class="nc" id="L88">            Date currentEnd = getTime(currentStart, currentLength);</span>
+<span class="nc" id="L89">            String currentName = screening.getRoom().getName();</span>
+<span class="nc bnc" id="L90" title="All 2 branches missed.">            if (isOverLapping(startTime, endTime, currentStart, currentEnd)</span>
+<span class="nc bnc" id="L91" title="All 2 branches missed.">                    &amp;&amp; room.equals(currentName)) {</span>
+<span class="nc" id="L92">                return &quot;There is an overlapping screening&quot;;</span>
+<span class="nc bnc" id="L93" title="All 2 branches missed.">            } else if ((isDuringMovieBreak(endTime, getTime(currentStart,-10), currentStart)</span>
+<span class="nc bnc" id="L94" title="All 4 branches missed.">                    || isDuringMovieBreak(startTime, currentEnd,getTime(currentEnd,10))) &amp;&amp; room.equals(currentName)) {</span>
+<span class="nc" id="L95">                return &quot;This would start in the break period after another screening in this room&quot;;</span>
+            }
+<span class="nc" id="L97">        }</span>
+<span class="nc" id="L98">        return &quot;&quot;;</span>
+    }
+
+    private boolean isOverLapping(Date startOfFirst, Date endOfFirst, Date startOfSecond, Date endOfSecond) {
+<span class="nc" id="L102">        final int PLUS = 1;</span>
+<span class="nc bnc" id="L103" title="All 4 branches missed.">        return (startOfFirst.compareTo(endOfSecond) != PLUS &amp;&amp; startOfSecond.compareTo(endOfFirst) != PLUS);</span>
+    }
+
+    private boolean isDuringMovieBreak(Date startOrEndOfMovie, Date startOfBreak, Date endOfBreak) {
+<span class="nc bnc" id="L107" title="All 4 branches missed.">        if (startOrEndOfMovie.compareTo(startOfBreak) != -1 &amp;&amp; startOrEndOfMovie.compareTo(endOfBreak) != 1) {</span>
+<span class="nc" id="L108">            return true;</span>
+        }
+<span class="nc" id="L110">        return false;</span>
+    }
+
+    private Date getTime(Date startTime, Integer length) {
+<span class="nc" id="L114">        Calendar calendar = Calendar.getInstance();</span>
+<span class="nc" id="L115">        calendar.setTime(startTime);</span>
+<span class="nc" id="L116">        calendar.add(calendar.MINUTE, length);</span>
+<span class="nc" id="L117">        return calendar.getTime();</span>
+    }
+
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.6.202009150832</span></div></body></html>

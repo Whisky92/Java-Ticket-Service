@@ -406,3 +406,27 @@
 1670167344420:create screening Titanic Classroom "2012-04-01 11:00"
 1670167350514:create screening Titanic Classroom "2012-04-01 10:50"
 1670167355680:create screening Titanic Classroom "2012-04-01 10:49"
+1670851380333:sign in privileged admin admin
+1670851401207:create room Pedersoli 10 10
+1670851430828:update room Pedersoli 20 10
+1670851552786:sign in privileged admin admin
+1670851614396:create movie Pedersoli 10 10
+1670851622034:update movie Pedersoli 20 10
+1670851647758:create room Pedersoli 20 10
+1670851658320:update room Pedersoli 10 10
+1670852267019:sign in privileged admin admin
+1670852302044:create room Pedersoli 10 10
+1670852311419:update room Pedersoli 20 10
+1670852394969:sign in privileged admin admin
+1670852410394:create room Pedersoli 10 10
+1670852416875:update room Pedersoli 20 10
+1670852420521:list rooms
+1670852509864:sign in privileged admin admin
+1670852523943:create movie asd asd 10
+1670852534230:update movie asd sadasd 20
+1670852805553:sign in privileged admin admin
+1670852842111:create room Pedersoli 10 10
+1670852847646:update room Pedersoli 20 10
+1670852852626:create movie SpiderMan action 120
+1670852862641:update movie SpiderMan action 120
+1670852879732:stacktrace

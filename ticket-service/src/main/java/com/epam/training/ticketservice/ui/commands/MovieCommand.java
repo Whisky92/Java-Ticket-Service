@@ -65,7 +65,7 @@ public class MovieCommand {
             response+=movieDTO.getTitle()+
                     " ("+movieDTO.getGenre()
                     +", "+movieDTO.getLength()
-                    +")\n";
+                    +" minutes)\n";
         }
         response=response.substring(0, response.length()-1);
         return response;

@@ -1,0 +1,4 @@
+-------------------------------------------------------------------------------
+Test set: com.epam.training.ticketservice.core.services.serviceimpl.MovieServiceImplTest
+-------------------------------------------------------------------------------
+Tests run: 6, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.869 s - in com.epam.training.ticketservice.core.services.serviceimpl.MovieServiceImplTest

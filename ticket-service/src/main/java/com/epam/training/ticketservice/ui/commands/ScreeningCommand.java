@@ -34,7 +34,7 @@ public class ScreeningCommand {
         }
         String response = "";
         for (ScreeningDTO screeningDTO : screenings) {
-            response += screeningDTO.getMovie().getTitle() + "("
+            response += screeningDTO.getMovie().getTitle() + " ("
                     + screeningDTO.getMovie().getGenre() + ", "
                     + screeningDTO.getMovie().getLength()
                     + " minutes), screened in room "

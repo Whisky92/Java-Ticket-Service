@@ -64,8 +64,8 @@ public class RoomCommand {
         for (RoomDTO roomDTO : rooms) {
             response += "Room " + roomDTO.getName() +
                     " with " + roomDTO.getRowCount() * roomDTO.getColumnCount() + " seats, " +
-                    roomDTO.getRowCount() + " rows and  " + roomDTO.getColumnCount()
-                    + " columns \n";
+                    roomDTO.getRowCount() + " rows and " + roomDTO.getColumnCount()
+                    + " columns\n";
         }
         response = response.substring(0, response.length() - 1);
         return response;
