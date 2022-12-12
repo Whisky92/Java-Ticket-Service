@@ -1,0 +1,22 @@
+-------------------------------------------------------------------------------
+Test set: com.training.epam.ticketservice.at.TestExecutor
+-------------------------------------------------------------------------------
+Tests run: 17, Failures: 2, Errors: 0, Skipped: 0, Time elapsed: 111.376 sec <<< FAILURE!
+an admin user can update a movie(allows creating movie descriptions)  Time elapsed: 6.314 sec  <<< FAILURE!
+java.lang.AssertionError: 
+Expected: "Sátántangó (drama, 450 minutes)"
+     but: was "Sátántangó (dram, 450 minutes)"
+	at org.hamcrest.MatcherAssert.assertThat(MatcherAssert.java:20)
+	at org.hamcrest.MatcherAssert.assertThat(MatcherAssert.java:6)
+	at com.training.epam.ticketservice.at.GenericCliProcessStepDefs.theNextLineOfOutputContains(GenericCliProcessStepDefs.java:43)
+	at ?.the next line of the output is "Sátántangó (drama, 450 minutes)"(file:///C:/Users/Tomi/IdeaProjects/Java-Ticket-Service/ticket-service-acceptance-tests/src/test/resources/features/movies.feature:19)
+
+an admin user can update a room(allow creating, reading, updating and deleting rooms where the screenings will happen)  Time elapsed: 5.981 sec  <<< FAILURE!
+java.lang.AssertionError: 
+Expected: "Room Pedersoli with 100 seats, 10 rows and 10 columns"
+     but: was "Room Pedersoli with 200 seats, 20 rows and 10 columns"
+	at org.hamcrest.MatcherAssert.assertThat(MatcherAssert.java:20)
+	at org.hamcrest.MatcherAssert.assertThat(MatcherAssert.java:6)
+	at com.training.epam.ticketservice.at.GenericCliProcessStepDefs.theNextLineOfOutputContains(GenericCliProcessStepDefs.java:43)
+	at ?.the next line of the output is "Room Pedersoli with 100 seats, 10 rows and 10 columns"(file:///C:/Users/Tomi/IdeaProjects/Java-Ticket-Service/ticket-service-acceptance-tests/src/test/resources/features/rooms.feature:20)
+

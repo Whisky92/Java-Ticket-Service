@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<testsuite tests="17" failures="2" name="com.training.epam.ticketservice.at.TestExecutor" time="110.954" errors="0" skipped="0">
+  <properties>
+    <property name="java.runtime.name" value="OpenJDK Runtime Environment"/>
+    <property name="java.vm.version" value="11.0.17+8-LTS"/>
+    <property name="sun.boot.library.path" value="C:\Users\Tomi\.jdks\corretto-11.0.17\bin"/>
+    <property name="maven.multiModuleProjectDirectory" value="C:\Users\Tomi\IdeaProjects\Java-Ticket-Service"/>
+    <property name="java.vm.vendor" value="Amazon.com Inc."/>
+    <property name="java.vendor.url" value="https://aws.amazon.com/corretto/"/>
+    <property name="path.separator" value=";"/>
+    <property name="guice.disable.misplaced.annotation.check" value="true"/>
+    <property name="java.vm.name" value="OpenJDK 64-Bit Server VM"/>
+    <property name="user.country" value="HU"/>
+    <property name="sun.java.launcher" value="SUN_STANDARD"/>
+    <property name="user.script" value=""/>
+    <property name="sun.os.patch.level" value=""/>
+    <property name="user.dir" value="C:\Users\Tomi\IdeaProjects\Java-Ticket-Service"/>
+    <property name="java.vm.compressedOopsMode" value="Zero based"/>
+    <property name="java.vm.specification.name" value="Java Virtual Machine Specification"/>
+    <property name="java.runtime.version" value="11.0.17+8-LTS"/>
+    <property name="java.awt.graphicsenv" value="sun.awt.Win32GraphicsEnvironment"/>
+    <property name="os.arch" value="amd64"/>
+    <property name="java.io.tmpdir" value="C:\Users\Tomi\AppData\Local\Temp\"/>
+    <property name="line.separator" value="
+"/>
+    <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
+    <property name="user.variant" value=""/>
+    <property name="os.name" value="Windows 10"/>
+    <property name="classworlds.conf" value="C:\Program Files\Maven\apache-maven-3.8.1\bin\..\bin\m2.conf"/>
+    <property name="sun.jnu.encoding" value="Cp1250"/>
+    <property name="java.library.path" value="C:\Users\Tomi\.jdks\corretto-11.0.17\bin;C:\Windows\Sun\Java\bin;C:\Windows\system32;C:\Windows;C:\Program Files\Common Files\Oracle\Java\javapath;C:\Program Files (x86)\Common Files\Oracle\Java\javapath;C:\Program Files (x86)\Razer Chroma SDK\bin;C:\Program Files\Razer Chroma SDK\bin;C:\Program Files (x86)\Razer\ChromaBroadcast\bin;C:\Program Files\Razer\ChromaBroadcast\bin;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Windows\System32\OpenSSH\;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\Program Files\NVIDIA Corporation\NVIDIA NvDLISR;C:\Program Files\dotnet\;C:\Users\Tomi\AppData\Local\Microsoft\WindowsApps;C:\Users\Tomi\AppData\Local\Programs\Microsoft VS Code\bin;C:\Users\Tomi\.dotnet\tools;C:\Program Files (x86)\dotnet\;C:\Windows\system32\config\systemprofile\AppData\Local\Microsoft\WindowsApps;C:\Program Files\Git\cmd;C:\Program Files\php;C:\Program Files\Maven\apache-maven-3.8.1\bin;C:\Users\Tomi\.jdks\corretto-11.0.17\bin;C:\Users\Tomi\AppData\Local\Programs\Python\Python310;C:\Users\Tomi\AppData\Local\Programs\Python\Python310\Scripts;C:\Users\Tomi\AppData\Local\Programs\Microsoft VS Code\bin;D:\Program Files\JetBrains\IntelliJ IDEA Community Edition 2022.1.1\bin;;C:\Users\Tomi\AppData\Local\GitHubDesktop\bin;C:\Program Files\JetBrains\PyCharm 2022.2.2\bin;;C:\Users\Tomi\AppData\Local\JetBrains\PyCharm Community Edition 2022.2.2\bin;;D:\Program Files\JetBrains\PhpStorm 2022.2.3\bin;;D:\Program Files\JetBrains\IntelliJ IDEA 2022.3\bin;;."/>
+    <property name="maven.conf" value="C:\Program Files\Maven\apache-maven-3.8.1\bin\../conf"/>
+    <property name="jdk.debug" value="release"/>
+    <property name="java.class.version" value="55.0"/>
+    <property name="java.specification.name" value="Java Platform API Specification"/>
+    <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
+    <property name="os.version" value="10.0"/>
+    <property name="library.jansi.path" value="C:\Program Files\Maven\apache-maven-3.8.1\bin\..\lib\jansi-native"/>
+    <property name="user.home" value="C:\Users\Tomi"/>
+    <property name="user.timezone" value="Europe/Prague"/>
+    <property name="java.awt.printerjob" value="sun.awt.windows.WPrinterJob"/>
+    <property name="file.encoding" value="Cp1250"/>
+    <property name="java.specification.version" value="11"/>
+    <property name="java.class.path" value="C:\Program Files\Maven\apache-maven-3.8.1\bin\..\boot\plexus-classworlds-2.6.0.jar"/>
+    <property name="user.name" value="Tomi"/>
+    <property name="java.vm.specification.version" value="11"/>
+    <property name="sun.arch.data.model" value="64"/>
+    <property name="sun.java.command" value="org.codehaus.plexus.classworlds.launcher.Launcher clean verify -P requirements-grade2"/>
+    <property name="java.home" value="C:\Users\Tomi\.jdks\corretto-11.0.17"/>
+    <property name="user.language" value="hu"/>
+    <property name="java.specification.vendor" value="Oracle Corporation"/>
+    <property name="awt.toolkit" value="sun.awt.windows.WToolkit"/>
+    <property name="java.vm.info" value="mixed mode"/>
+    <property name="java.version" value="11.0.17"/>
+    <property name="java.vendor" value="Amazon.com Inc."/>
+    <property name="sun.stderr.encoding" value="cp852"/>
+    <property name="maven.home" value="C:\Program Files\Maven\apache-maven-3.8.1\bin\.."/>
+    <property name="file.separator" value="\"/>
+    <property name="java.version.date" value="2022-10-18"/>
+    <property name="java.vendor.url.bug" value="https://github.com/corretto/corretto-11/issues/"/>
+    <property name="sun.cpu.endian" value="little"/>
+    <property name="sun.io.unicode.encoding" value="UnicodeLittle"/>
+    <property name="java.vendor.version" value="Corretto-11.0.17.8.1"/>
+    <property name="sun.stdout.encoding" value="cp852"/>
+    <property name="sun.desktop" value="windows"/>
+    <property name="sun.cpu.isalist" value="amd64"/>
+  </properties>
+  <testcase classname="allow creating accounts and logging in" name="the admin account exists by default and can be logged in with the correct password" time="5.331"/>
+  <testcase classname="allow creating accounts and logging in" name="the admin account can be signed out" time="5.452"/>
+  <testcase classname="allow creating accounts and logging in" name="the admin account can not be logged in with incorrect password" time="6.162"/>
+  <testcase classname="allows creating movie descriptions" name="an admin user can create and list movies" time="6.016"/>
+  <testcase classname="allows creating movie descriptions" name="an admin user can update a movie" time="6.314">
+    <failure message="
+Expected: &quot;Sátántangó (drama, 450 minutes)&quot;
+     but: was &quot;Sátántangó (dram, 450 minutes)&quot;" type="java.lang.AssertionError">java.lang.AssertionError: 
+Expected: &quot;Sátántangó (drama, 450 minutes)&quot;
+     but: was &quot;Sátántangó (dram, 450 minutes)&quot;
+	at org.hamcrest.MatcherAssert.assertThat(MatcherAssert.java:20)
+	at org.hamcrest.MatcherAssert.assertThat(MatcherAssert.java:6)
+	at com.training.epam.ticketservice.at.GenericCliProcessStepDefs.theNextLineOfOutputContains(GenericCliProcessStepDefs.java:43)
+	at ✽.the next line of the output is &quot;Sátántangó (drama, 450 minutes)&quot;(file:///C:/Users/Tomi/IdeaProjects/Java-Ticket-Service/ticket-service-acceptance-tests/src/test/resources/features/movies.feature:19)
+</failure>
+  </testcase>
+  <testcase classname="allows creating movie descriptions" name="an admin user can delete a movie" time="5.809"/>
+  <testcase classname="allows creating movie descriptions" name="an unauthenticated user can list movies" time="5.996"/>
+  <testcase classname="allow creating, reading, updating and deleting rooms where the screenings will happen" name="an admin user can create and list rooms" time="5.595"/>
+  <testcase classname="allow creating, reading, updating and deleting rooms where the screenings will happen" name="an admin user can update a room" time="5.981">
+    <failure message="
+Expected: &quot;Room Pedersoli with 100 seats, 10 rows and 10 columns&quot;
+     but: was &quot;Room Pedersoli with 200 seats, 20 rows and 10 columns&quot;" type="java.lang.AssertionError">java.lang.AssertionError: 
+Expected: &quot;Room Pedersoli with 100 seats, 10 rows and 10 columns&quot;
+     but: was &quot;Room Pedersoli with 200 seats, 20 rows and 10 columns&quot;
+	at org.hamcrest.MatcherAssert.assertThat(MatcherAssert.java:20)
+	at org.hamcrest.MatcherAssert.assertThat(MatcherAssert.java:6)
+	at com.training.epam.ticketservice.at.GenericCliProcessStepDefs.theNextLineOfOutputContains(GenericCliProcessStepDefs.java:43)
+	at ✽.the next line of the output is &quot;Room Pedersoli with 100 seats, 10 rows and 10 columns&quot;(file:///C:/Users/Tomi/IdeaProjects/Java-Ticket-Service/ticket-service-acceptance-tests/src/test/resources/features/rooms.feature:20)
+</failure>
+  </testcase>
+  <testcase classname="allow creating, reading, updating and deleting rooms where the screenings will happen" name="an admin user can delete a room" time="6.242"/>
+  <testcase classname="allow creating, reading, updating and deleting rooms where the screenings will happen" name="an unauthenticated user can list rooms" time="6.203"/>
+  <testcase classname="allows creating, deleting and listing screenings" name="The admin user can create and query screenings" time="7.598"/>
+  <testcase classname="allows creating, deleting and listing screenings" name="The admin can not create overlapping screenings in the same room" time="7.546"/>
+  <testcase classname="allows creating, deleting and listing screenings" name="The admin can create overlapping screenings in different rooms" time="7.866"/>
+  <testcase classname="allows creating, deleting and listing screenings" name="The admin can not create screenings during a 10 minute long breaks after another screening in the same room" time="7.314"/>
+  <testcase classname="allows creating, deleting and listing screenings" name="The admin can create screenings even if there is a break after a screening in a different room" time="7.914"/>
+  <testcase classname="allows creating, deleting and listing screenings" name="The admin user can delete screenings" time="7.615"/>
+</testsuite>

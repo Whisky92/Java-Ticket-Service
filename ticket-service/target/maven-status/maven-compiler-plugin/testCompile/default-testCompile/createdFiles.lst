@@ -1,0 +1,4 @@
+com\epam\training\ticketservice\core\services\serviceimpl\ScreeningServiceImplTest.class
+com\epam\training\ticketservice\core\services\serviceimpl\UserServiceImplTest.class
+com\epam\training\ticketservice\core\services\serviceimpl\MovieServiceImplTest.class
+com\epam\training\ticketservice\core\services\serviceimpl\RoomServiceImplTest.class
